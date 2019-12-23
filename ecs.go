@@ -16,7 +16,6 @@ type TaskResponse struct {
 }
 
 type TaskOptions struct {
-	DSN            string
 	Task           string
 	Container      string
 	Cluster        string
