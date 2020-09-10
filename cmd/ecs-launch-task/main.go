@@ -36,9 +36,9 @@ func main() {
 		SecurityGroups: security_groups,
 	}
 
-	args := flag.Args()
+	cmd := flag.Args()
 
-	rsp, err := ecs.LaunchTaskWithDSN(*dsn, opts, args...)
+	rsp, err := ecs.LaunchTaskWithDSN(*dsn, opts, cmd...)
 
 	if err != nil {
 		log.Fatal(err)
