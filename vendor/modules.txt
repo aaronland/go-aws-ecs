@@ -2,7 +2,7 @@
 github.com/aaronland/go-aws-session
 # github.com/aaronland/go-string v0.1.1
 github.com/aaronland/go-string/dsn
-# github.com/aws/aws-sdk-go v1.34.21
+# github.com/aws/aws-sdk-go v1.35.2
 github.com/aws/aws-sdk-go/aws
 github.com/aws/aws-sdk-go/aws/awserr
 github.com/aws/aws-sdk-go/aws/awsutil
@@ -41,7 +41,7 @@ github.com/aws/aws-sdk-go/service/cloudwatchlogs
 github.com/aws/aws-sdk-go/service/ecs
 github.com/aws/aws-sdk-go/service/sts
 github.com/aws/aws-sdk-go/service/sts/stsiface
-# github.com/jmespath/go-jmespath v0.3.0
+# github.com/jmespath/go-jmespath v0.4.0
 github.com/jmespath/go-jmespath
-# github.com/sfomuseum/go-flags v0.4.1
+# github.com/sfomuseum/go-flags v0.4.2
 github.com/sfomuseum/go-flags/multi
