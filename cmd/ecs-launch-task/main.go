@@ -14,6 +14,7 @@ func main() {
 	container := flag.String("container", "", "The name of your ECS container.")
 	cluster := flag.String("cluster", "", "The name of your ECS cluster.")
 	launch_type := flag.String("launch-type", "", "A valid ECS launch type.")
+	platform_version := flag.String("platform-version", "", "A valid ECS platform version.")
 	public_ip := flag.String("public-ip", "", "A valid ECS public IP string.")
 
 	var subnets multi.MultiString
@@ -27,13 +28,14 @@ func main() {
 	flag.Parse()
 
 	opts := &ecs.TaskOptions{
-		Task:           *task,
-		Container:      *container,
-		Cluster:        *cluster,
-		LaunchType:     *launch_type,
-		PublicIP:       *public_ip,
-		Subnets:        subnets,
-		SecurityGroups: security_groups,
+		Task:            *task,
+		Container:       *container,
+		Cluster:         *cluster,
+		LaunchType:      *launch_type,
+		PlatformVersion: *platform_version,
+		PublicIP:        *public_ip,
+		Subnets:         subnets,
+		SecurityGroups:  security_groups,
 	}
 
 	cmd := flag.Args()
