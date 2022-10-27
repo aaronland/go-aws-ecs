@@ -29,14 +29,13 @@ const opCreateCapacityProvider = "CreateCapacityProvider"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateCapacityProviderRequest method.
+//	req, resp := client.CreateCapacityProviderRequest(params)
 //
-//    // Example sending a request using the CreateCapacityProviderRequest method.
-//    req, resp := client.CreateCapacityProviderRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider
 func (c *ECS) CreateCapacityProviderRequest(input *CreateCapacityProviderInput) (req *request.Request, output *CreateCapacityProviderOutput) {
@@ -74,28 +73,29 @@ func (c *ECS) CreateCapacityProviderRequest(input *CreateCapacityProviderInput) 
 // API operation CreateCapacityProvider for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * LimitExceededException
-//   The limit for the resource was exceeded.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UpdateInProgressException
-//   There's already a current Amazon ECS container agent update in progress on
-//   the container instance that's specified. If the container agent becomes disconnected
-//   while it's in a transitional stage, such as PENDING or STAGING, the update
-//   process can get stuck in that state. However, when the agent reconnects,
-//   it resumes where it stopped previously.
+//   - LimitExceededException
+//     The limit for the resource was exceeded.
+//
+//   - UpdateInProgressException
+//     There's already a current Amazon ECS container agent update in progress on
+//     the container instance that's specified. If the container agent becomes disconnected
+//     while it's in a transitional stage, such as PENDING or STAGING, the update
+//     process can get stuck in that state. However, when the agent reconnects,
+//     it resumes where it stopped previously.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider
 func (c *ECS) CreateCapacityProvider(input *CreateCapacityProviderInput) (*CreateCapacityProviderOutput, error) {
@@ -135,14 +135,13 @@ const opCreateCluster = "CreateCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateClusterRequest method.
+//	req, resp := client.CreateClusterRequest(params)
 //
-//    // Example sending a request using the CreateClusterRequest method.
-//    req, resp := client.CreateClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster
 func (c *ECS) CreateClusterRequest(input *CreateClusterInput) (req *request.Request, output *CreateClusterOutput) {
@@ -172,7 +171,7 @@ func (c *ECS) CreateClusterRequest(input *CreateClusterInput) (req *request.Requ
 // manage required resources in other Amazon Web Services services on your behalf.
 // However, if the IAM user that makes the call doesn't have permissions to
 // create the service-linked role, it isn't created. For more information, see
-// Using Service-Linked Roles for Amazon ECS (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html)
+// Using service-linked roles for Amazon ECS (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
@@ -183,18 +182,19 @@ func (c *ECS) CreateClusterRequest(input *CreateClusterInput) (req *request.Requ
 // API operation CreateCluster for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster
 func (c *ECS) CreateCluster(input *CreateClusterInput) (*CreateClusterOutput, error) {
@@ -234,14 +234,13 @@ const opCreateService = "CreateService"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateServiceRequest method.
+//	req, resp := client.CreateServiceRequest(params)
 //
-//    // Example sending a request using the CreateServiceRequest method.
-//    req, resp := client.CreateServiceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService
 func (c *ECS) CreateServiceRequest(input *CreateServiceInput) (req *request.Request, output *CreateServiceOutput) {
@@ -270,7 +269,7 @@ func (c *ECS) CreateServiceRequest(input *CreateServiceInput) (req *request.Requ
 // In addition to maintaining the desired count of tasks in your service, you
 // can optionally run your service behind one or more load balancers. The load
 // balancers distribute traffic across the tasks that are associated with the
-// service. For more information, see Service Load Balancing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html)
+// service. For more information, see Service load balancing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
 // Tasks for services that don't use a load balancer are considered healthy
@@ -280,22 +279,22 @@ func (c *ECS) CreateServiceRequest(input *CreateServiceInput) (req *request.Requ
 //
 // There are two service scheduler strategies available:
 //
-//    * REPLICA - The replica scheduling strategy places and maintains your
-//    desired number of tasks across your cluster. By default, the service scheduler
-//    spreads tasks across Availability Zones. You can use task placement strategies
-//    and constraints to customize task placement decisions. For more information,
-//    see Service Scheduler Concepts (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
-//    in the Amazon Elastic Container Service Developer Guide.
+//   - REPLICA - The replica scheduling strategy places and maintains your
+//     desired number of tasks across your cluster. By default, the service scheduler
+//     spreads tasks across Availability Zones. You can use task placement strategies
+//     and constraints to customize task placement decisions. For more information,
+//     see Service scheduler concepts (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
+//     in the Amazon Elastic Container Service Developer Guide.
 //
-//    * DAEMON - The daemon scheduling strategy deploys exactly one task on
-//    each active container instance that meets all of the task placement constraints
-//    that you specify in your cluster. The service scheduler also evaluates
-//    the task placement constraints for running tasks. It also stops tasks
-//    that don't meet the placement constraints. When using this strategy, you
-//    don't need to specify a desired number of tasks, a task placement strategy,
-//    or use Service Auto Scaling policies. For more information, see Service
-//    Scheduler Concepts (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
-//    in the Amazon Elastic Container Service Developer Guide.
+//   - DAEMON - The daemon scheduling strategy deploys exactly one task on
+//     each active container instance that meets all of the task placement constraints
+//     that you specify in your cluster. The service scheduler also evaluates
+//     the task placement constraints for running tasks. It also stops tasks
+//     that don't meet the placement constraints. When using this strategy, you
+//     don't need to specify a desired number of tasks, a task placement strategy,
+//     or use Service Auto Scaling policies. For more information, see Service
+//     scheduler concepts (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
+//     in the Amazon Elastic Container Service Developer Guide.
 //
 // You can optionally specify a deployment configuration for your service. The
 // deployment is initiated by changing properties. For example, the deployment
@@ -343,28 +342,14 @@ func (c *ECS) CreateServiceRequest(input *CreateServiceInput) (req *request.Requ
 // When creating a service that uses the EXTERNAL deployment controller, you
 // can specify only parameters that aren't controlled at the task set level.
 // The only required parameter is the service name. You control your services
-// using the CreateTaskSet operation. For more information, see Amazon ECS Deployment
-// Types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
+// using the CreateTaskSet operation. For more information, see Amazon ECS deployment
+// types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
-// When the service scheduler launches new tasks, it determines task placement
-// in your cluster using the following logic:
-//
-//    * Determine which of the container instances in your cluster can support
-//    the task definition of your service. For example, they have the required
-//    CPU, memory, ports, and container instance attributes.
-//
-//    * By default, the service scheduler attempts to balance tasks across Availability
-//    Zones in this manner. This is the case even if you can choose a different
-//    placement strategy with the placementStrategy parameter. Sort the valid
-//    container instances, giving priority to instances that have the fewest
-//    number of running tasks for this service in their respective Availability
-//    Zone. For example, if zone A has one running service task and zones B
-//    and C each have zero, valid container instances in either zone B or C
-//    are considered optimal for placement. Place the new service task on a
-//    valid container instance in an optimal Availability Zone based on the
-//    previous steps, favoring container instances with the fewest number of
-//    running tasks for this service.
+// When the service scheduler launches new tasks, it determines task placement.
+// For information about task placement and task placement strategies, see Amazon
+// ECS task placement (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html)
+// in the Amazon Elastic Container Service Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -374,35 +359,36 @@ func (c *ECS) CreateServiceRequest(input *CreateServiceInput) (req *request.Requ
 // API operation CreateService for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * PlatformUnknownException
-//   The specified platform version doesn't exist.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * PlatformTaskDefinitionIncompatibilityException
-//   The specified platform version doesn't satisfy the required capabilities
-//   of the task definition.
+//   - PlatformUnknownException
+//     The specified platform version doesn't exist.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - PlatformTaskDefinitionIncompatibilityException
+//     The specified platform version doesn't satisfy the required capabilities
+//     of the task definition.
+//
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService
 func (c *ECS) CreateService(input *CreateServiceInput) (*CreateServiceOutput, error) {
@@ -442,14 +428,13 @@ const opCreateTaskSet = "CreateTaskSet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the CreateTaskSetRequest method.
+//	req, resp := client.CreateTaskSetRequest(params)
 //
-//    // Example sending a request using the CreateTaskSetRequest method.
-//    req, resp := client.CreateTaskSetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet
 func (c *ECS) CreateTaskSetRequest(input *CreateTaskSetInput) (req *request.Request, output *CreateTaskSetOutput) {
@@ -472,7 +457,7 @@ func (c *ECS) CreateTaskSetRequest(input *CreateTaskSetInput) (req *request.Requ
 //
 // Create a task set in the specified cluster and service. This is used when
 // a service uses the EXTERNAL deployment controller type. For more information,
-// see Amazon ECS Deployment Types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
+// see Amazon ECS deployment types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
@@ -483,43 +468,44 @@ func (c *ECS) CreateTaskSetRequest(input *CreateTaskSetInput) (req *request.Requ
 // API operation CreateTaskSet for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * PlatformUnknownException
-//   The specified platform version doesn't exist.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * PlatformTaskDefinitionIncompatibilityException
-//   The specified platform version doesn't satisfy the required capabilities
-//   of the task definition.
+//   - PlatformUnknownException
+//     The specified platform version doesn't exist.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - PlatformTaskDefinitionIncompatibilityException
+//     The specified platform version doesn't satisfy the required capabilities
+//     of the task definition.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
-//   * ServiceNotActiveException
-//   The specified service isn't active. You can't update a service that's inactive.
-//   If you have previously deleted a service, you can re-create it with CreateService.
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
+//
+//   - ServiceNotActiveException
+//     The specified service isn't active. You can't update a service that's inactive.
+//     If you have previously deleted a service, you can re-create it with CreateService.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet
 func (c *ECS) CreateTaskSet(input *CreateTaskSetInput) (*CreateTaskSetOutput, error) {
@@ -559,14 +545,13 @@ const opDeleteAccountSetting = "DeleteAccountSetting"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAccountSettingRequest method.
+//	req, resp := client.DeleteAccountSettingRequest(params)
 //
-//    // Example sending a request using the DeleteAccountSettingRequest method.
-//    req, resp := client.DeleteAccountSettingRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting
 func (c *ECS) DeleteAccountSettingRequest(input *DeleteAccountSettingInput) (req *request.Request, output *DeleteAccountSettingOutput) {
@@ -598,18 +583,19 @@ func (c *ECS) DeleteAccountSettingRequest(input *DeleteAccountSettingInput) (req
 // API operation DeleteAccountSetting for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAccountSetting
 func (c *ECS) DeleteAccountSetting(input *DeleteAccountSettingInput) (*DeleteAccountSettingOutput, error) {
@@ -649,14 +635,13 @@ const opDeleteAttributes = "DeleteAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteAttributesRequest method.
+//	req, resp := client.DeleteAttributesRequest(params)
 //
-//    // Example sending a request using the DeleteAttributesRequest method.
-//    req, resp := client.DeleteAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes
 func (c *ECS) DeleteAttributesRequest(input *DeleteAttributesInput) (req *request.Request, output *DeleteAttributesOutput) {
@@ -687,18 +672,19 @@ func (c *ECS) DeleteAttributesRequest(input *DeleteAttributesInput) (req *reques
 // API operation DeleteAttributes for usage and error information.
 //
 // Returned Error Types:
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * TargetNotFoundException
-//   The specified target wasn't found. You can view your available container
-//   instances with ListContainerInstances. Amazon ECS container instances are
-//   cluster-specific and Region-specific.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - TargetNotFoundException
+//     The specified target wasn't found. You can view your available container
+//     instances with ListContainerInstances. Amazon ECS container instances are
+//     cluster-specific and Region-specific.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteAttributes
 func (c *ECS) DeleteAttributes(input *DeleteAttributesInput) (*DeleteAttributesOutput, error) {
@@ -738,14 +724,13 @@ const opDeleteCapacityProvider = "DeleteCapacityProvider"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteCapacityProviderRequest method.
+//	req, resp := client.DeleteCapacityProviderRequest(params)
 //
-//    // Example sending a request using the DeleteCapacityProviderRequest method.
-//    req, resp := client.DeleteCapacityProviderRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider
 func (c *ECS) DeleteCapacityProviderRequest(input *DeleteCapacityProviderInput) (req *request.Request, output *DeleteCapacityProviderOutput) {
@@ -790,18 +775,19 @@ func (c *ECS) DeleteCapacityProviderRequest(input *DeleteCapacityProviderInput) 
 // API operation DeleteCapacityProvider for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCapacityProvider
 func (c *ECS) DeleteCapacityProvider(input *DeleteCapacityProviderInput) (*DeleteCapacityProviderOutput, error) {
@@ -841,14 +827,13 @@ const opDeleteCluster = "DeleteCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteClusterRequest method.
+//	req, resp := client.DeleteClusterRequest(params)
 //
-//    // Example sending a request using the DeleteClusterRequest method.
-//    req, resp := client.DeleteClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster
 func (c *ECS) DeleteClusterRequest(input *DeleteClusterInput) (req *request.Request, output *DeleteClusterOutput) {
@@ -886,42 +871,43 @@ func (c *ECS) DeleteClusterRequest(input *DeleteClusterInput) (req *request.Requ
 // API operation DeleteCluster for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * ClusterContainsContainerInstancesException
-//   You can't delete a cluster that has registered container instances. First,
-//   deregister the container instances before you can delete the cluster. For
-//   more information, see DeregisterContainerInstance.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * ClusterContainsServicesException
-//   You can't delete a cluster that contains services. First, update the service
-//   to reduce its desired task count to 0, and then delete the service. For more
-//   information, see UpdateService and DeleteService.
+//   - ClusterContainsContainerInstancesException
+//     You can't delete a cluster that has registered container instances. First,
+//     deregister the container instances before you can delete the cluster. For
+//     more information, see DeregisterContainerInstance.
 //
-//   * ClusterContainsTasksException
-//   You can't delete a cluster that has active tasks.
+//   - ClusterContainsServicesException
+//     You can't delete a cluster that contains services. First, update the service
+//     to reduce its desired task count to 0, and then delete the service. For more
+//     information, see UpdateService and DeleteService.
 //
-//   * UpdateInProgressException
-//   There's already a current Amazon ECS container agent update in progress on
-//   the container instance that's specified. If the container agent becomes disconnected
-//   while it's in a transitional stage, such as PENDING or STAGING, the update
-//   process can get stuck in that state. However, when the agent reconnects,
-//   it resumes where it stopped previously.
+//   - ClusterContainsTasksException
+//     You can't delete a cluster that has active tasks.
+//
+//   - UpdateInProgressException
+//     There's already a current Amazon ECS container agent update in progress on
+//     the container instance that's specified. If the container agent becomes disconnected
+//     while it's in a transitional stage, such as PENDING or STAGING, the update
+//     process can get stuck in that state. However, when the agent reconnects,
+//     it resumes where it stopped previously.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster
 func (c *ECS) DeleteCluster(input *DeleteClusterInput) (*DeleteClusterOutput, error) {
@@ -961,14 +947,13 @@ const opDeleteService = "DeleteService"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteServiceRequest method.
+//	req, resp := client.DeleteServiceRequest(params)
 //
-//    // Example sending a request using the DeleteServiceRequest method.
-//    req, resp := client.DeleteServiceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService
 func (c *ECS) DeleteServiceRequest(input *DeleteServiceInput) (req *request.Request, output *DeleteServiceOutput) {
@@ -1016,26 +1001,27 @@ func (c *ECS) DeleteServiceRequest(input *DeleteServiceInput) (req *request.Requ
 // API operation DeleteService for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
+//
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteService
 func (c *ECS) DeleteService(input *DeleteServiceInput) (*DeleteServiceOutput, error) {
@@ -1075,14 +1061,13 @@ const opDeleteTaskSet = "DeleteTaskSet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeleteTaskSetRequest method.
+//	req, resp := client.DeleteTaskSetRequest(params)
 //
-//    // Example sending a request using the DeleteTaskSetRequest method.
-//    req, resp := client.DeleteTaskSetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet
 func (c *ECS) DeleteTaskSetRequest(input *DeleteTaskSetInput) (req *request.Request, output *DeleteTaskSetOutput) {
@@ -1105,7 +1090,7 @@ func (c *ECS) DeleteTaskSetRequest(input *DeleteTaskSetInput) (req *request.Requ
 //
 // Deletes a specified task set within a service. This is used when a service
 // uses the EXTERNAL deployment controller type. For more information, see Amazon
-// ECS Deployment Types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
+// ECS deployment types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
@@ -1116,41 +1101,42 @@ func (c *ECS) DeleteTaskSetRequest(input *DeleteTaskSetInput) (req *request.Requ
 // API operation DeleteTaskSet for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
-//   * ServiceNotActiveException
-//   The specified service isn't active. You can't update a service that's inactive.
-//   If you have previously deleted a service, you can re-create it with CreateService.
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
 //
-//   * TaskSetNotFoundException
-//   The specified task set wasn't found. You can view your available task sets
-//   with DescribeTaskSets. Task sets are specific to each cluster, service and
-//   Region.
+//   - ServiceNotActiveException
+//     The specified service isn't active. You can't update a service that's inactive.
+//     If you have previously deleted a service, you can re-create it with CreateService.
+//
+//   - TaskSetNotFoundException
+//     The specified task set wasn't found. You can view your available task sets
+//     with DescribeTaskSets. Task sets are specific to each cluster, service and
+//     Region.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet
 func (c *ECS) DeleteTaskSet(input *DeleteTaskSetInput) (*DeleteTaskSetOutput, error) {
@@ -1190,14 +1176,13 @@ const opDeregisterContainerInstance = "DeregisterContainerInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeregisterContainerInstanceRequest method.
+//	req, resp := client.DeregisterContainerInstanceRequest(params)
 //
-//    // Example sending a request using the DeregisterContainerInstanceRequest method.
-//    req, resp := client.DeregisterContainerInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance
 func (c *ECS) DeregisterContainerInstanceRequest(input *DeregisterContainerInstanceInput) (req *request.Request, output *DeregisterContainerInstanceOutput) {
@@ -1242,22 +1227,23 @@ func (c *ECS) DeregisterContainerInstanceRequest(input *DeregisterContainerInsta
 // API operation DeregisterContainerInstance for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterContainerInstance
 func (c *ECS) DeregisterContainerInstance(input *DeregisterContainerInstanceInput) (*DeregisterContainerInstanceOutput, error) {
@@ -1297,14 +1283,13 @@ const opDeregisterTaskDefinition = "DeregisterTaskDefinition"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DeregisterTaskDefinitionRequest method.
+//	req, resp := client.DeregisterTaskDefinitionRequest(params)
 //
-//    // Example sending a request using the DeregisterTaskDefinitionRequest method.
-//    req, resp := client.DeregisterTaskDefinitionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition
 func (c *ECS) DeregisterTaskDefinitionRequest(input *DeregisterTaskDefinitionInput) (req *request.Request, output *DeregisterTaskDefinitionOutput) {
@@ -1349,18 +1334,19 @@ func (c *ECS) DeregisterTaskDefinitionRequest(input *DeregisterTaskDefinitionInp
 // API operation DeregisterTaskDefinition for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeregisterTaskDefinition
 func (c *ECS) DeregisterTaskDefinition(input *DeregisterTaskDefinitionInput) (*DeregisterTaskDefinitionOutput, error) {
@@ -1400,14 +1386,13 @@ const opDescribeCapacityProviders = "DescribeCapacityProviders"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeCapacityProvidersRequest method.
+//	req, resp := client.DescribeCapacityProvidersRequest(params)
 //
-//    // Example sending a request using the DescribeCapacityProvidersRequest method.
-//    req, resp := client.DescribeCapacityProvidersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders
 func (c *ECS) DescribeCapacityProvidersRequest(input *DescribeCapacityProvidersInput) (req *request.Request, output *DescribeCapacityProvidersOutput) {
@@ -1438,18 +1423,19 @@ func (c *ECS) DescribeCapacityProvidersRequest(input *DescribeCapacityProvidersI
 // API operation DescribeCapacityProviders for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeCapacityProviders
 func (c *ECS) DescribeCapacityProviders(input *DescribeCapacityProvidersInput) (*DescribeCapacityProvidersOutput, error) {
@@ -1489,14 +1475,13 @@ const opDescribeClusters = "DescribeClusters"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeClustersRequest method.
+//	req, resp := client.DescribeClustersRequest(params)
 //
-//    // Example sending a request using the DescribeClustersRequest method.
-//    req, resp := client.DescribeClustersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters
 func (c *ECS) DescribeClustersRequest(input *DescribeClustersInput) (req *request.Request, output *DescribeClustersOutput) {
@@ -1527,18 +1512,19 @@ func (c *ECS) DescribeClustersRequest(input *DescribeClustersInput) (req *reques
 // API operation DescribeClusters for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeClusters
 func (c *ECS) DescribeClusters(input *DescribeClustersInput) (*DescribeClustersOutput, error) {
@@ -1578,14 +1564,13 @@ const opDescribeContainerInstances = "DescribeContainerInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeContainerInstancesRequest method.
+//	req, resp := client.DescribeContainerInstancesRequest(params)
 //
-//    // Example sending a request using the DescribeContainerInstancesRequest method.
-//    req, resp := client.DescribeContainerInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances
 func (c *ECS) DescribeContainerInstancesRequest(input *DescribeContainerInstancesInput) (req *request.Request, output *DescribeContainerInstancesOutput) {
@@ -1617,22 +1602,23 @@ func (c *ECS) DescribeContainerInstancesRequest(input *DescribeContainerInstance
 // API operation DescribeContainerInstances for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeContainerInstances
 func (c *ECS) DescribeContainerInstances(input *DescribeContainerInstancesInput) (*DescribeContainerInstancesOutput, error) {
@@ -1672,14 +1658,13 @@ const opDescribeServices = "DescribeServices"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeServicesRequest method.
+//	req, resp := client.DescribeServicesRequest(params)
 //
-//    // Example sending a request using the DescribeServicesRequest method.
-//    req, resp := client.DescribeServicesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices
 func (c *ECS) DescribeServicesRequest(input *DescribeServicesInput) (req *request.Request, output *DescribeServicesOutput) {
@@ -1710,22 +1695,23 @@ func (c *ECS) DescribeServicesRequest(input *DescribeServicesInput) (req *reques
 // API operation DescribeServices for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeServices
 func (c *ECS) DescribeServices(input *DescribeServicesInput) (*DescribeServicesOutput, error) {
@@ -1765,14 +1751,13 @@ const opDescribeTaskDefinition = "DescribeTaskDefinition"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeTaskDefinitionRequest method.
+//	req, resp := client.DescribeTaskDefinitionRequest(params)
 //
-//    // Example sending a request using the DescribeTaskDefinitionRequest method.
-//    req, resp := client.DescribeTaskDefinitionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition
 func (c *ECS) DescribeTaskDefinitionRequest(input *DescribeTaskDefinitionInput) (req *request.Request, output *DescribeTaskDefinitionOutput) {
@@ -1808,18 +1793,19 @@ func (c *ECS) DescribeTaskDefinitionRequest(input *DescribeTaskDefinitionInput) 
 // API operation DescribeTaskDefinition for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskDefinition
 func (c *ECS) DescribeTaskDefinition(input *DescribeTaskDefinitionInput) (*DescribeTaskDefinitionOutput, error) {
@@ -1859,14 +1845,13 @@ const opDescribeTaskSets = "DescribeTaskSets"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeTaskSetsRequest method.
+//	req, resp := client.DescribeTaskSetsRequest(params)
 //
-//    // Example sending a request using the DescribeTaskSetsRequest method.
-//    req, resp := client.DescribeTaskSetsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets
 func (c *ECS) DescribeTaskSetsRequest(input *DescribeTaskSetsInput) (req *request.Request, output *DescribeTaskSetsOutput) {
@@ -1900,36 +1885,37 @@ func (c *ECS) DescribeTaskSetsRequest(input *DescribeTaskSetsInput) (req *reques
 // API operation DescribeTaskSets for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
-//   * ServiceNotActiveException
-//   The specified service isn't active. You can't update a service that's inactive.
-//   If you have previously deleted a service, you can re-create it with CreateService.
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
+//
+//   - ServiceNotActiveException
+//     The specified service isn't active. You can't update a service that's inactive.
+//     If you have previously deleted a service, you can re-create it with CreateService.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets
 func (c *ECS) DescribeTaskSets(input *DescribeTaskSetsInput) (*DescribeTaskSetsOutput, error) {
@@ -1969,14 +1955,13 @@ const opDescribeTasks = "DescribeTasks"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DescribeTasksRequest method.
+//	req, resp := client.DescribeTasksRequest(params)
 //
-//    // Example sending a request using the DescribeTasksRequest method.
-//    req, resp := client.DescribeTasksRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks
 func (c *ECS) DescribeTasksRequest(input *DescribeTasksInput) (req *request.Request, output *DescribeTasksOutput) {
@@ -1999,6 +1984,9 @@ func (c *ECS) DescribeTasksRequest(input *DescribeTasksInput) (req *request.Requ
 //
 // Describes a specified task or tasks.
 //
+// Currently, stopped tasks appear in the returned results for at least one
+// hour.
+//
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
@@ -2007,22 +1995,23 @@ func (c *ECS) DescribeTasksRequest(input *DescribeTasksInput) (req *request.Requ
 // API operation DescribeTasks for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTasks
 func (c *ECS) DescribeTasks(input *DescribeTasksInput) (*DescribeTasksOutput, error) {
@@ -2062,14 +2051,13 @@ const opDiscoverPollEndpoint = "DiscoverPollEndpoint"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the DiscoverPollEndpointRequest method.
+//	req, resp := client.DiscoverPollEndpointRequest(params)
 //
-//    // Example sending a request using the DiscoverPollEndpointRequest method.
-//    req, resp := client.DiscoverPollEndpointRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint
 func (c *ECS) DiscoverPollEndpointRequest(input *DiscoverPollEndpointInput) (req *request.Request, output *DiscoverPollEndpointOutput) {
@@ -2090,7 +2078,6 @@ func (c *ECS) DiscoverPollEndpointRequest(input *DiscoverPollEndpointInput) (req
 
 // DiscoverPollEndpoint API operation for Amazon EC2 Container Service.
 //
-//
 // This action is only used by the Amazon ECS agent, and it is not intended
 // for use outside of the agent.
 //
@@ -2104,14 +2091,15 @@ func (c *ECS) DiscoverPollEndpointRequest(input *DiscoverPollEndpointInput) (req
 // API operation DiscoverPollEndpoint for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
+//
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DiscoverPollEndpoint
 func (c *ECS) DiscoverPollEndpoint(input *DiscoverPollEndpointInput) (*DiscoverPollEndpointOutput, error) {
@@ -2151,14 +2139,13 @@ const opExecuteCommand = "ExecuteCommand"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ExecuteCommandRequest method.
+//	req, resp := client.ExecuteCommandRequest(params)
 //
-//    // Example sending a request using the ExecuteCommandRequest method.
-//    req, resp := client.ExecuteCommandRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand
 func (c *ECS) ExecuteCommandRequest(input *ExecuteCommandInput) (req *request.Request, output *ExecuteCommandOutput) {
@@ -2181,6 +2168,11 @@ func (c *ECS) ExecuteCommandRequest(input *ExecuteCommandInput) (req *request.Re
 //
 // Runs a command remotely on a container within a task.
 //
+// If you use a condition key in your IAM policy to refine the conditions for
+// the policy statement, for example limit the actions to a specific cluster,
+// you recevie an AccessDeniedException when there is a mismatch between the
+// condition key value and the corresponding parameter value.
+//
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
 // the error.
@@ -2189,40 +2181,41 @@ func (c *ECS) ExecuteCommandRequest(input *ExecuteCommandInput) (req *request.Re
 // API operation ExecuteCommand for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
-//   * TargetNotConnectedException
-//   The execute command cannot run. This error can be caused by any of the following
-//   configuration issues:
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//      * Incorrect IAM permissions
+//   - TargetNotConnectedException
+//     The execute command cannot run. This error can be caused by any of the following
+//     configuration issues:
 //
-//      * The SSM agent is not installed or is not running
+//   - Incorrect IAM permissions
 //
-//      * There is an interface Amazon VPC endpoint for Amazon ECS, but there
-//      is not one for for Systems Manager Session Manager
+//   - The SSM agent is not installed or is not running
 //
-//   For information about how to troubleshoot the issues, see Troubleshooting
-//   issues with ECS Exec (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
-//   in the Amazon Elastic Container Service Developer Guide.
+//   - There is an interface Amazon VPC endpoint for Amazon ECS, but there
+//     is not one for for Systems Manager Session Manager
+//
+//     For information about how to troubleshoot the issues, see Troubleshooting
+//     issues with ECS Exec (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
+//     in the Amazon Elastic Container Service Developer Guide.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand
 func (c *ECS) ExecuteCommand(input *ExecuteCommandInput) (*ExecuteCommandOutput, error) {
@@ -2262,14 +2255,13 @@ const opListAccountSettings = "ListAccountSettings"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListAccountSettingsRequest method.
+//	req, resp := client.ListAccountSettingsRequest(params)
 //
-//    // Example sending a request using the ListAccountSettingsRequest method.
-//    req, resp := client.ListAccountSettingsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings
 func (c *ECS) ListAccountSettingsRequest(input *ListAccountSettingsInput) (req *request.Request, output *ListAccountSettingsOutput) {
@@ -2306,18 +2298,19 @@ func (c *ECS) ListAccountSettingsRequest(input *ListAccountSettingsInput) (req *
 // API operation ListAccountSettings for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAccountSettings
 func (c *ECS) ListAccountSettings(input *ListAccountSettingsInput) (*ListAccountSettingsOutput, error) {
@@ -2349,15 +2342,14 @@ func (c *ECS) ListAccountSettingsWithContext(ctx aws.Context, input *ListAccount
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListAccountSettings operation.
-//    pageNum := 0
-//    err := client.ListAccountSettingsPages(params,
-//        func(page *ecs.ListAccountSettingsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListAccountSettings operation.
+//	pageNum := 0
+//	err := client.ListAccountSettingsPages(params,
+//	    func(page *ecs.ListAccountSettingsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListAccountSettingsPages(input *ListAccountSettingsInput, fn func(*ListAccountSettingsOutput, bool) bool) error {
 	return c.ListAccountSettingsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -2409,14 +2401,13 @@ const opListAttributes = "ListAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListAttributesRequest method.
+//	req, resp := client.ListAttributesRequest(params)
 //
-//    // Example sending a request using the ListAttributesRequest method.
-//    req, resp := client.ListAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes
 func (c *ECS) ListAttributesRequest(input *ListAttributesInput) (req *request.Request, output *ListAttributesOutput) {
@@ -2459,13 +2450,14 @@ func (c *ECS) ListAttributesRequest(input *ListAttributesInput) (req *request.Re
 // API operation ListAttributes for usage and error information.
 //
 // Returned Error Types:
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListAttributes
 func (c *ECS) ListAttributes(input *ListAttributesInput) (*ListAttributesOutput, error) {
@@ -2497,15 +2489,14 @@ func (c *ECS) ListAttributesWithContext(ctx aws.Context, input *ListAttributesIn
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListAttributes operation.
-//    pageNum := 0
-//    err := client.ListAttributesPages(params,
-//        func(page *ecs.ListAttributesOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListAttributes operation.
+//	pageNum := 0
+//	err := client.ListAttributesPages(params,
+//	    func(page *ecs.ListAttributesOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListAttributesPages(input *ListAttributesInput, fn func(*ListAttributesOutput, bool) bool) error {
 	return c.ListAttributesPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -2557,14 +2548,13 @@ const opListClusters = "ListClusters"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListClustersRequest method.
+//	req, resp := client.ListClustersRequest(params)
 //
-//    // Example sending a request using the ListClustersRequest method.
-//    req, resp := client.ListClustersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters
 func (c *ECS) ListClustersRequest(input *ListClustersInput) (req *request.Request, output *ListClustersOutput) {
@@ -2601,18 +2591,19 @@ func (c *ECS) ListClustersRequest(input *ListClustersInput) (req *request.Reques
 // API operation ListClusters for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListClusters
 func (c *ECS) ListClusters(input *ListClustersInput) (*ListClustersOutput, error) {
@@ -2644,15 +2635,14 @@ func (c *ECS) ListClustersWithContext(ctx aws.Context, input *ListClustersInput,
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListClusters operation.
-//    pageNum := 0
-//    err := client.ListClustersPages(params,
-//        func(page *ecs.ListClustersOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListClusters operation.
+//	pageNum := 0
+//	err := client.ListClustersPages(params,
+//	    func(page *ecs.ListClustersOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListClustersPages(input *ListClustersInput, fn func(*ListClustersOutput, bool) bool) error {
 	return c.ListClustersPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -2704,14 +2694,13 @@ const opListContainerInstances = "ListContainerInstances"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListContainerInstancesRequest method.
+//	req, resp := client.ListContainerInstancesRequest(params)
 //
-//    // Example sending a request using the ListContainerInstancesRequest method.
-//    req, resp := client.ListContainerInstancesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances
 func (c *ECS) ListContainerInstancesRequest(input *ListContainerInstancesInput) (req *request.Request, output *ListContainerInstancesOutput) {
@@ -2752,22 +2741,23 @@ func (c *ECS) ListContainerInstancesRequest(input *ListContainerInstancesInput) 
 // API operation ListContainerInstances for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances
 func (c *ECS) ListContainerInstances(input *ListContainerInstancesInput) (*ListContainerInstancesOutput, error) {
@@ -2799,15 +2789,14 @@ func (c *ECS) ListContainerInstancesWithContext(ctx aws.Context, input *ListCont
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListContainerInstances operation.
-//    pageNum := 0
-//    err := client.ListContainerInstancesPages(params,
-//        func(page *ecs.ListContainerInstancesOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListContainerInstances operation.
+//	pageNum := 0
+//	err := client.ListContainerInstancesPages(params,
+//	    func(page *ecs.ListContainerInstancesOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListContainerInstancesPages(input *ListContainerInstancesInput, fn func(*ListContainerInstancesOutput, bool) bool) error {
 	return c.ListContainerInstancesPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -2859,14 +2848,13 @@ const opListServices = "ListServices"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListServicesRequest method.
+//	req, resp := client.ListServicesRequest(params)
 //
-//    // Example sending a request using the ListServicesRequest method.
-//    req, resp := client.ListServicesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices
 func (c *ECS) ListServicesRequest(input *ListServicesInput) (req *request.Request, output *ListServicesOutput) {
@@ -2904,22 +2892,23 @@ func (c *ECS) ListServicesRequest(input *ListServicesInput) (req *request.Reques
 // API operation ListServices for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServices
 func (c *ECS) ListServices(input *ListServicesInput) (*ListServicesOutput, error) {
@@ -2951,15 +2940,14 @@ func (c *ECS) ListServicesWithContext(ctx aws.Context, input *ListServicesInput,
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListServices operation.
-//    pageNum := 0
-//    err := client.ListServicesPages(params,
-//        func(page *ecs.ListServicesOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListServices operation.
+//	pageNum := 0
+//	err := client.ListServicesPages(params,
+//	    func(page *ecs.ListServicesOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListServicesPages(input *ListServicesInput, fn func(*ListServicesOutput, bool) bool) error {
 	return c.ListServicesPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3011,14 +2999,13 @@ const opListTagsForResource = "ListTagsForResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTagsForResourceRequest method.
+//	req, resp := client.ListTagsForResourceRequest(params)
 //
-//    // Example sending a request using the ListTagsForResourceRequest method.
-//    req, resp := client.ListTagsForResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource
 func (c *ECS) ListTagsForResourceRequest(input *ListTagsForResourceInput) (req *request.Request, output *ListTagsForResourceOutput) {
@@ -3049,22 +3036,23 @@ func (c *ECS) ListTagsForResourceRequest(input *ListTagsForResourceInput) (req *
 // API operation ListTagsForResource for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTagsForResource
 func (c *ECS) ListTagsForResource(input *ListTagsForResourceInput) (*ListTagsForResourceOutput, error) {
@@ -3104,14 +3092,13 @@ const opListTaskDefinitionFamilies = "ListTaskDefinitionFamilies"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTaskDefinitionFamiliesRequest method.
+//	req, resp := client.ListTaskDefinitionFamiliesRequest(params)
 //
-//    // Example sending a request using the ListTaskDefinitionFamiliesRequest method.
-//    req, resp := client.ListTaskDefinitionFamiliesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies
 func (c *ECS) ListTaskDefinitionFamiliesRequest(input *ListTaskDefinitionFamiliesInput) (req *request.Request, output *ListTaskDefinitionFamiliesOutput) {
@@ -3154,18 +3141,19 @@ func (c *ECS) ListTaskDefinitionFamiliesRequest(input *ListTaskDefinitionFamilie
 // API operation ListTaskDefinitionFamilies for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitionFamilies
 func (c *ECS) ListTaskDefinitionFamilies(input *ListTaskDefinitionFamiliesInput) (*ListTaskDefinitionFamiliesOutput, error) {
@@ -3197,15 +3185,14 @@ func (c *ECS) ListTaskDefinitionFamiliesWithContext(ctx aws.Context, input *List
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListTaskDefinitionFamilies operation.
-//    pageNum := 0
-//    err := client.ListTaskDefinitionFamiliesPages(params,
-//        func(page *ecs.ListTaskDefinitionFamiliesOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListTaskDefinitionFamilies operation.
+//	pageNum := 0
+//	err := client.ListTaskDefinitionFamiliesPages(params,
+//	    func(page *ecs.ListTaskDefinitionFamiliesOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListTaskDefinitionFamiliesPages(input *ListTaskDefinitionFamiliesInput, fn func(*ListTaskDefinitionFamiliesOutput, bool) bool) error {
 	return c.ListTaskDefinitionFamiliesPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3257,14 +3244,13 @@ const opListTaskDefinitions = "ListTaskDefinitions"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTaskDefinitionsRequest method.
+//	req, resp := client.ListTaskDefinitionsRequest(params)
 //
-//    // Example sending a request using the ListTaskDefinitionsRequest method.
-//    req, resp := client.ListTaskDefinitionsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions
 func (c *ECS) ListTaskDefinitionsRequest(input *ListTaskDefinitionsInput) (req *request.Request, output *ListTaskDefinitionsOutput) {
@@ -3303,18 +3289,19 @@ func (c *ECS) ListTaskDefinitionsRequest(input *ListTaskDefinitionsInput) (req *
 // API operation ListTaskDefinitions for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTaskDefinitions
 func (c *ECS) ListTaskDefinitions(input *ListTaskDefinitionsInput) (*ListTaskDefinitionsOutput, error) {
@@ -3346,15 +3333,14 @@ func (c *ECS) ListTaskDefinitionsWithContext(ctx aws.Context, input *ListTaskDef
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListTaskDefinitions operation.
-//    pageNum := 0
-//    err := client.ListTaskDefinitionsPages(params,
-//        func(page *ecs.ListTaskDefinitionsOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListTaskDefinitions operation.
+//	pageNum := 0
+//	err := client.ListTaskDefinitionsPages(params,
+//	    func(page *ecs.ListTaskDefinitionsOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListTaskDefinitionsPages(input *ListTaskDefinitionsInput, fn func(*ListTaskDefinitionsOutput, bool) bool) error {
 	return c.ListTaskDefinitionsPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3406,14 +3392,13 @@ const opListTasks = "ListTasks"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the ListTasksRequest method.
+//	req, resp := client.ListTasksRequest(params)
 //
-//    // Example sending a request using the ListTasksRequest method.
-//    req, resp := client.ListTasksRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks
 func (c *ECS) ListTasksRequest(input *ListTasksInput) (req *request.Request, output *ListTasksOutput) {
@@ -3455,26 +3440,27 @@ func (c *ECS) ListTasksRequest(input *ListTasksInput) (req *request.Request, out
 // API operation ListTasks for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
+//
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListTasks
 func (c *ECS) ListTasks(input *ListTasksInput) (*ListTasksOutput, error) {
@@ -3506,15 +3492,14 @@ func (c *ECS) ListTasksWithContext(ctx aws.Context, input *ListTasksInput, opts 
 //
 // Note: This operation can generate multiple requests to a service.
 //
-//    // Example iterating over at most 3 pages of a ListTasks operation.
-//    pageNum := 0
-//    err := client.ListTasksPages(params,
-//        func(page *ecs.ListTasksOutput, lastPage bool) bool {
-//            pageNum++
-//            fmt.Println(page)
-//            return pageNum <= 3
-//        })
-//
+//	// Example iterating over at most 3 pages of a ListTasks operation.
+//	pageNum := 0
+//	err := client.ListTasksPages(params,
+//	    func(page *ecs.ListTasksOutput, lastPage bool) bool {
+//	        pageNum++
+//	        fmt.Println(page)
+//	        return pageNum <= 3
+//	    })
 func (c *ECS) ListTasksPages(input *ListTasksInput, fn func(*ListTasksOutput, bool) bool) error {
 	return c.ListTasksPagesWithContext(aws.BackgroundContext(), input, fn)
 }
@@ -3566,14 +3551,13 @@ const opPutAccountSetting = "PutAccountSetting"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutAccountSettingRequest method.
+//	req, resp := client.PutAccountSettingRequest(params)
 //
-//    // Example sending a request using the PutAccountSettingRequest method.
-//    req, resp := client.PutAccountSettingRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting
 func (c *ECS) PutAccountSettingRequest(input *PutAccountSettingInput) (req *request.Request, output *PutAccountSettingOutput) {
@@ -3632,18 +3616,19 @@ func (c *ECS) PutAccountSettingRequest(input *PutAccountSettingInput) (req *requ
 // API operation PutAccountSetting for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting
 func (c *ECS) PutAccountSetting(input *PutAccountSettingInput) (*PutAccountSettingOutput, error) {
@@ -3683,14 +3668,13 @@ const opPutAccountSettingDefault = "PutAccountSettingDefault"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutAccountSettingDefaultRequest method.
+//	req, resp := client.PutAccountSettingDefaultRequest(params)
 //
-//    // Example sending a request using the PutAccountSettingDefaultRequest method.
-//    req, resp := client.PutAccountSettingDefaultRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault
 func (c *ECS) PutAccountSettingDefaultRequest(input *PutAccountSettingDefaultInput) (req *request.Request, output *PutAccountSettingDefaultOutput) {
@@ -3723,18 +3707,19 @@ func (c *ECS) PutAccountSettingDefaultRequest(input *PutAccountSettingDefaultInp
 // API operation PutAccountSettingDefault for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault
 func (c *ECS) PutAccountSettingDefault(input *PutAccountSettingDefaultInput) (*PutAccountSettingDefaultOutput, error) {
@@ -3774,14 +3759,13 @@ const opPutAttributes = "PutAttributes"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutAttributesRequest method.
+//	req, resp := client.PutAttributesRequest(params)
 //
-//    // Example sending a request using the PutAttributesRequest method.
-//    req, resp := client.PutAttributesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes
 func (c *ECS) PutAttributesRequest(input *PutAttributesInput) (req *request.Request, output *PutAttributesOutput) {
@@ -3816,23 +3800,24 @@ func (c *ECS) PutAttributesRequest(input *PutAttributesInput) (req *request.Requ
 // API operation PutAttributes for usage and error information.
 //
 // Returned Error Types:
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * TargetNotFoundException
-//   The specified target wasn't found. You can view your available container
-//   instances with ListContainerInstances. Amazon ECS container instances are
-//   cluster-specific and Region-specific.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * AttributeLimitExceededException
-//   You can apply up to 10 custom attributes for each resource. You can view
-//   the attributes of a resource with ListAttributes. You can remove existing
-//   attributes on a resource with DeleteAttributes.
+//   - TargetNotFoundException
+//     The specified target wasn't found. You can view your available container
+//     instances with ListContainerInstances. Amazon ECS container instances are
+//     cluster-specific and Region-specific.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - AttributeLimitExceededException
+//     You can apply up to 10 custom attributes for each resource. You can view
+//     the attributes of a resource with ListAttributes. You can remove existing
+//     attributes on a resource with DeleteAttributes.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes
 func (c *ECS) PutAttributes(input *PutAttributesInput) (*PutAttributesOutput, error) {
@@ -3872,14 +3857,13 @@ const opPutClusterCapacityProviders = "PutClusterCapacityProviders"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the PutClusterCapacityProvidersRequest method.
+//	req, resp := client.PutClusterCapacityProvidersRequest(params)
 //
-//    // Example sending a request using the PutClusterCapacityProvidersRequest method.
-//    req, resp := client.PutClusterCapacityProvidersRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders
 func (c *ECS) PutClusterCapacityProvidersRequest(input *PutClusterCapacityProvidersInput) (req *request.Request, output *PutClusterCapacityProvidersOutput) {
@@ -3926,32 +3910,33 @@ func (c *ECS) PutClusterCapacityProvidersRequest(input *PutClusterCapacityProvid
 // API operation PutClusterCapacityProviders for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * ResourceInUseException
-//   The specified resource is in-use and can't be removed.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * UpdateInProgressException
-//   There's already a current Amazon ECS container agent update in progress on
-//   the container instance that's specified. If the container agent becomes disconnected
-//   while it's in a transitional stage, such as PENDING or STAGING, the update
-//   process can get stuck in that state. However, when the agent reconnects,
-//   it resumes where it stopped previously.
+//   - ResourceInUseException
+//     The specified resource is in-use and can't be removed.
+//
+//   - UpdateInProgressException
+//     There's already a current Amazon ECS container agent update in progress on
+//     the container instance that's specified. If the container agent becomes disconnected
+//     while it's in a transitional stage, such as PENDING or STAGING, the update
+//     process can get stuck in that state. However, when the agent reconnects,
+//     it resumes where it stopped previously.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders
 func (c *ECS) PutClusterCapacityProviders(input *PutClusterCapacityProvidersInput) (*PutClusterCapacityProvidersOutput, error) {
@@ -3991,14 +3976,13 @@ const opRegisterContainerInstance = "RegisterContainerInstance"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RegisterContainerInstanceRequest method.
+//	req, resp := client.RegisterContainerInstanceRequest(params)
 //
-//    // Example sending a request using the RegisterContainerInstanceRequest method.
-//    req, resp := client.RegisterContainerInstanceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance
 func (c *ECS) RegisterContainerInstanceRequest(input *RegisterContainerInstanceInput) (req *request.Request, output *RegisterContainerInstanceOutput) {
@@ -4019,7 +4003,6 @@ func (c *ECS) RegisterContainerInstanceRequest(input *RegisterContainerInstanceI
 
 // RegisterContainerInstance API operation for Amazon EC2 Container Service.
 //
-//
 // This action is only used by the Amazon ECS agent, and it is not intended
 // for use outside of the agent.
 //
@@ -4034,18 +4017,19 @@ func (c *ECS) RegisterContainerInstanceRequest(input *RegisterContainerInstanceI
 // API operation RegisterContainerInstance for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterContainerInstance
 func (c *ECS) RegisterContainerInstance(input *RegisterContainerInstanceInput) (*RegisterContainerInstanceOutput, error) {
@@ -4085,14 +4069,13 @@ const opRegisterTaskDefinition = "RegisterTaskDefinition"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RegisterTaskDefinitionRequest method.
+//	req, resp := client.RegisterTaskDefinitionRequest(params)
 //
-//    // Example sending a request using the RegisterTaskDefinitionRequest method.
-//    req, resp := client.RegisterTaskDefinitionRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition
 func (c *ECS) RegisterTaskDefinitionRequest(input *RegisterTaskDefinitionInput) (req *request.Request, output *RegisterTaskDefinitionOutput) {
@@ -4143,18 +4126,19 @@ func (c *ECS) RegisterTaskDefinitionRequest(input *RegisterTaskDefinitionInput) 
 // API operation RegisterTaskDefinition for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RegisterTaskDefinition
 func (c *ECS) RegisterTaskDefinition(input *RegisterTaskDefinitionInput) (*RegisterTaskDefinitionOutput, error) {
@@ -4194,14 +4178,13 @@ const opRunTask = "RunTask"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the RunTaskRequest method.
+//	req, resp := client.RunTaskRequest(params)
 //
-//    // Example sending a request using the RunTaskRequest method.
-//    req, resp := client.RunTaskRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask
 func (c *ECS) RunTaskRequest(input *RunTaskInput) (req *request.Request, output *RunTaskOutput) {
@@ -4241,17 +4224,17 @@ func (c *ECS) RunTaskRequest(input *RunTaskInput) (req *request.Request, output 
 //
 // To manage eventual consistency, you can do the following:
 //
-//    * Confirm the state of the resource before you run a command to modify
-//    it. Run the DescribeTasks command using an exponential backoff algorithm
-//    to ensure that you allow enough time for the previous command to propagate
-//    through the system. To do this, run the DescribeTasks command repeatedly,
-//    starting with a couple of seconds of wait time and increasing gradually
-//    up to five minutes of wait time.
+//   - Confirm the state of the resource before you run a command to modify
+//     it. Run the DescribeTasks command using an exponential backoff algorithm
+//     to ensure that you allow enough time for the previous command to propagate
+//     through the system. To do this, run the DescribeTasks command repeatedly,
+//     starting with a couple of seconds of wait time and increasing gradually
+//     up to five minutes of wait time.
 //
-//    * Add wait time between subsequent commands, even if the DescribeTasks
-//    command returns an accurate response. Apply an exponential backoff algorithm
-//    starting with a couple of seconds of wait time, and increase gradually
-//    up to about five minutes of wait time.
+//   - Add wait time between subsequent commands, even if the DescribeTasks
+//     command returns an accurate response. Apply an exponential backoff algorithm
+//     starting with a couple of seconds of wait time, and increase gradually
+//     up to about five minutes of wait time.
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -4261,39 +4244,40 @@ func (c *ECS) RunTaskRequest(input *RunTaskInput) (req *request.Request, output 
 // API operation RunTask for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * PlatformUnknownException
-//   The specified platform version doesn't exist.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * PlatformTaskDefinitionIncompatibilityException
-//   The specified platform version doesn't satisfy the required capabilities
-//   of the task definition.
+//   - PlatformUnknownException
+//     The specified platform version doesn't exist.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - PlatformTaskDefinitionIncompatibilityException
+//     The specified platform version doesn't satisfy the required capabilities
+//     of the task definition.
 //
-//   * BlockedException
-//   Your Amazon Web Services account was blocked. For more information, contact
-//   Amazon Web Services Support (http://aws.amazon.com/contact-us/).
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
+//
+//   - BlockedException
+//     Your Amazon Web Services account was blocked. For more information, contact
+//     Amazon Web Services Support (http://aws.amazon.com/contact-us/).
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask
 func (c *ECS) RunTask(input *RunTaskInput) (*RunTaskOutput, error) {
@@ -4333,14 +4317,13 @@ const opStartTask = "StartTask"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StartTaskRequest method.
+//	req, resp := client.StartTaskRequest(params)
 //
-//    // Example sending a request using the StartTaskRequest method.
-//    req, resp := client.StartTaskRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask
 func (c *ECS) StartTaskRequest(input *StartTaskInput) (req *request.Request, output *StartTaskOutput) {
@@ -4376,22 +4359,23 @@ func (c *ECS) StartTaskRequest(input *StartTaskInput) (req *request.Request, out
 // API operation StartTask for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask
 func (c *ECS) StartTask(input *StartTaskInput) (*StartTaskOutput, error) {
@@ -4431,14 +4415,13 @@ const opStopTask = "StopTask"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the StopTaskRequest method.
+//	req, resp := client.StopTaskRequest(params)
 //
-//    // Example sending a request using the StopTaskRequest method.
-//    req, resp := client.StopTaskRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask
 func (c *ECS) StopTaskRequest(input *StopTaskInput) (req *request.Request, output *StopTaskOutput) {
@@ -4481,22 +4464,23 @@ func (c *ECS) StopTaskRequest(input *StopTaskInput) (req *request.Request, outpu
 // API operation StopTask for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask
 func (c *ECS) StopTask(input *StopTaskInput) (*StopTaskOutput, error) {
@@ -4536,14 +4520,13 @@ const opSubmitAttachmentStateChanges = "SubmitAttachmentStateChanges"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SubmitAttachmentStateChangesRequest method.
+//	req, resp := client.SubmitAttachmentStateChangesRequest(params)
 //
-//    // Example sending a request using the SubmitAttachmentStateChangesRequest method.
-//    req, resp := client.SubmitAttachmentStateChangesRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges
 func (c *ECS) SubmitAttachmentStateChangesRequest(input *SubmitAttachmentStateChangesInput) (req *request.Request, output *SubmitAttachmentStateChangesOutput) {
@@ -4564,7 +4547,6 @@ func (c *ECS) SubmitAttachmentStateChangesRequest(input *SubmitAttachmentStateCh
 
 // SubmitAttachmentStateChanges API operation for Amazon EC2 Container Service.
 //
-//
 // This action is only used by the Amazon ECS agent, and it is not intended
 // for use outside of the agent.
 //
@@ -4578,21 +4560,22 @@ func (c *ECS) SubmitAttachmentStateChangesRequest(input *SubmitAttachmentStateCh
 // API operation SubmitAttachmentStateChanges for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitAttachmentStateChanges
 func (c *ECS) SubmitAttachmentStateChanges(input *SubmitAttachmentStateChangesInput) (*SubmitAttachmentStateChangesOutput, error) {
@@ -4632,14 +4615,13 @@ const opSubmitContainerStateChange = "SubmitContainerStateChange"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SubmitContainerStateChangeRequest method.
+//	req, resp := client.SubmitContainerStateChangeRequest(params)
 //
-//    // Example sending a request using the SubmitContainerStateChangeRequest method.
-//    req, resp := client.SubmitContainerStateChangeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange
 func (c *ECS) SubmitContainerStateChangeRequest(input *SubmitContainerStateChangeInput) (req *request.Request, output *SubmitContainerStateChangeOutput) {
@@ -4660,7 +4642,6 @@ func (c *ECS) SubmitContainerStateChangeRequest(input *SubmitContainerStateChang
 
 // SubmitContainerStateChange API operation for Amazon EC2 Container Service.
 //
-//
 // This action is only used by the Amazon ECS agent, and it is not intended
 // for use outside of the agent.
 //
@@ -4674,17 +4655,18 @@ func (c *ECS) SubmitContainerStateChangeRequest(input *SubmitContainerStateChang
 // API operation SubmitContainerStateChange for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitContainerStateChange
 func (c *ECS) SubmitContainerStateChange(input *SubmitContainerStateChangeInput) (*SubmitContainerStateChangeOutput, error) {
@@ -4724,14 +4706,13 @@ const opSubmitTaskStateChange = "SubmitTaskStateChange"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the SubmitTaskStateChangeRequest method.
+//	req, resp := client.SubmitTaskStateChangeRequest(params)
 //
-//    // Example sending a request using the SubmitTaskStateChangeRequest method.
-//    req, resp := client.SubmitTaskStateChangeRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange
 func (c *ECS) SubmitTaskStateChangeRequest(input *SubmitTaskStateChangeInput) (req *request.Request, output *SubmitTaskStateChangeOutput) {
@@ -4752,7 +4733,6 @@ func (c *ECS) SubmitTaskStateChangeRequest(input *SubmitTaskStateChangeInput) (r
 
 // SubmitTaskStateChange API operation for Amazon EC2 Container Service.
 //
-//
 // This action is only used by the Amazon ECS agent, and it is not intended
 // for use outside of the agent.
 //
@@ -4766,21 +4746,22 @@ func (c *ECS) SubmitTaskStateChangeRequest(input *SubmitTaskStateChangeInput) (r
 // API operation SubmitTaskStateChange for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SubmitTaskStateChange
 func (c *ECS) SubmitTaskStateChange(input *SubmitTaskStateChangeInput) (*SubmitTaskStateChangeOutput, error) {
@@ -4820,14 +4801,13 @@ const opTagResource = "TagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the TagResourceRequest method.
+//	req, resp := client.TagResourceRequest(params)
 //
-//    // Example sending a request using the TagResourceRequest method.
-//    req, resp := client.TagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource
 func (c *ECS) TagResourceRequest(input *TagResourceInput) (req *request.Request, output *TagResourceOutput) {
@@ -4862,25 +4842,26 @@ func (c *ECS) TagResourceRequest(input *TagResourceInput) (req *request.Request,
 // API operation TagResource for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource wasn't found.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ResourceNotFoundException
+//     The specified resource wasn't found.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TagResource
 func (c *ECS) TagResource(input *TagResourceInput) (*TagResourceOutput, error) {
@@ -4920,14 +4901,13 @@ const opUntagResource = "UntagResource"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UntagResourceRequest method.
+//	req, resp := client.UntagResourceRequest(params)
 //
-//    // Example sending a request using the UntagResourceRequest method.
-//    req, resp := client.UntagResourceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource
 func (c *ECS) UntagResourceRequest(input *UntagResourceInput) (req *request.Request, output *UntagResourceOutput) {
@@ -4959,25 +4939,26 @@ func (c *ECS) UntagResourceRequest(input *UntagResourceInput) (req *request.Requ
 // API operation UntagResource for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ResourceNotFoundException
-//   The specified resource wasn't found.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ResourceNotFoundException
+//     The specified resource wasn't found.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UntagResource
 func (c *ECS) UntagResource(input *UntagResourceInput) (*UntagResourceOutput, error) {
@@ -5017,14 +4998,13 @@ const opUpdateCapacityProvider = "UpdateCapacityProvider"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateCapacityProviderRequest method.
+//	req, resp := client.UpdateCapacityProviderRequest(params)
 //
-//    // Example sending a request using the UpdateCapacityProviderRequest method.
-//    req, resp := client.UpdateCapacityProviderRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider
 func (c *ECS) UpdateCapacityProviderRequest(input *UpdateCapacityProviderInput) (req *request.Request, output *UpdateCapacityProviderOutput) {
@@ -5055,18 +5035,19 @@ func (c *ECS) UpdateCapacityProviderRequest(input *UpdateCapacityProviderInput) 
 // API operation UpdateCapacityProvider for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCapacityProvider
 func (c *ECS) UpdateCapacityProvider(input *UpdateCapacityProviderInput) (*UpdateCapacityProviderOutput, error) {
@@ -5106,14 +5087,13 @@ const opUpdateCluster = "UpdateCluster"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateClusterRequest method.
+//	req, resp := client.UpdateClusterRequest(params)
 //
-//    // Example sending a request using the UpdateClusterRequest method.
-//    req, resp := client.UpdateClusterRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster
 func (c *ECS) UpdateClusterRequest(input *UpdateClusterInput) (req *request.Request, output *UpdateClusterOutput) {
@@ -5144,22 +5124,23 @@ func (c *ECS) UpdateClusterRequest(input *UpdateClusterInput) (req *request.Requ
 // API operation UpdateCluster for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster
 func (c *ECS) UpdateCluster(input *UpdateClusterInput) (*UpdateClusterOutput, error) {
@@ -5199,14 +5180,13 @@ const opUpdateClusterSettings = "UpdateClusterSettings"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateClusterSettingsRequest method.
+//	req, resp := client.UpdateClusterSettingsRequest(params)
 //
-//    // Example sending a request using the UpdateClusterSettingsRequest method.
-//    req, resp := client.UpdateClusterSettingsRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings
 func (c *ECS) UpdateClusterSettingsRequest(input *UpdateClusterSettingsInput) (req *request.Request, output *UpdateClusterSettingsOutput) {
@@ -5237,22 +5217,23 @@ func (c *ECS) UpdateClusterSettingsRequest(input *UpdateClusterSettingsInput) (r
 // API operation UpdateClusterSettings for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
+//
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings
 func (c *ECS) UpdateClusterSettings(input *UpdateClusterSettingsInput) (*UpdateClusterSettingsOutput, error) {
@@ -5292,14 +5273,13 @@ const opUpdateContainerAgent = "UpdateContainerAgent"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateContainerAgentRequest method.
+//	req, resp := client.UpdateContainerAgentRequest(params)
 //
-//    // Example sending a request using the UpdateContainerAgentRequest method.
-//    req, resp := client.UpdateContainerAgentRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent
 func (c *ECS) UpdateContainerAgentRequest(input *UpdateContainerAgentInput) (req *request.Request, output *UpdateContainerAgentOutput) {
@@ -5346,40 +5326,41 @@ func (c *ECS) UpdateContainerAgentRequest(input *UpdateContainerAgentInput) (req
 // API operation UpdateContainerAgent for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UpdateInProgressException
-//   There's already a current Amazon ECS container agent update in progress on
-//   the container instance that's specified. If the container agent becomes disconnected
-//   while it's in a transitional stage, such as PENDING or STAGING, the update
-//   process can get stuck in that state. However, when the agent reconnects,
-//   it resumes where it stopped previously.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * NoUpdateAvailableException
-//   There's no update available for this Amazon ECS container agent. This might
-//   be because the agent is already running the latest version or because it's
-//   so old that there's no update path to the current version.
+//   - UpdateInProgressException
+//     There's already a current Amazon ECS container agent update in progress on
+//     the container instance that's specified. If the container agent becomes disconnected
+//     while it's in a transitional stage, such as PENDING or STAGING, the update
+//     process can get stuck in that state. However, when the agent reconnects,
+//     it resumes where it stopped previously.
 //
-//   * MissingVersionException
-//   Amazon ECS can't determine the current version of the Amazon ECS container
-//   agent on the container instance and doesn't have enough information to proceed
-//   with an update. This could be because the agent running on the container
-//   instance is a previous or custom version that doesn't use our version information.
+//   - NoUpdateAvailableException
+//     There's no update available for this Amazon ECS container agent. This might
+//     be because the agent is already running the latest version or because it's
+//     so old that there's no update path to the current version.
+//
+//   - MissingVersionException
+//     Amazon ECS can't determine the current version of the Amazon ECS container
+//     agent on the container instance and doesn't have enough information to proceed
+//     with an update. This could be because the agent running on the container
+//     instance is a previous or custom version that doesn't use our version information.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent
 func (c *ECS) UpdateContainerAgent(input *UpdateContainerAgentInput) (*UpdateContainerAgentOutput, error) {
@@ -5419,14 +5400,13 @@ const opUpdateContainerInstancesState = "UpdateContainerInstancesState"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateContainerInstancesStateRequest method.
+//	req, resp := client.UpdateContainerInstancesStateRequest(params)
 //
-//    // Example sending a request using the UpdateContainerInstancesStateRequest method.
-//    req, resp := client.UpdateContainerInstancesStateRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState
 func (c *ECS) UpdateContainerInstancesStateRequest(input *UpdateContainerInstancesStateInput) (req *request.Request, output *UpdateContainerInstancesStateOutput) {
@@ -5468,23 +5448,23 @@ func (c *ECS) UpdateContainerInstancesStateRequest(input *UpdateContainerInstanc
 // parameters, minimumHealthyPercent and maximumPercent. You can change the
 // deployment configuration of your service using UpdateService.
 //
-//    * If minimumHealthyPercent is below 100%, the scheduler can ignore desiredCount
-//    temporarily during task replacement. For example, desiredCount is four
-//    tasks, a minimum of 50% allows the scheduler to stop two existing tasks
-//    before starting two new tasks. If the minimum is 100%, the service scheduler
-//    can't remove existing tasks until the replacement tasks are considered
-//    healthy. Tasks for services that do not use a load balancer are considered
-//    healthy if they're in the RUNNING state. Tasks for services that use a
-//    load balancer are considered healthy if they're in the RUNNING state and
-//    are reported as healthy by the load balancer.
+//   - If minimumHealthyPercent is below 100%, the scheduler can ignore desiredCount
+//     temporarily during task replacement. For example, desiredCount is four
+//     tasks, a minimum of 50% allows the scheduler to stop two existing tasks
+//     before starting two new tasks. If the minimum is 100%, the service scheduler
+//     can't remove existing tasks until the replacement tasks are considered
+//     healthy. Tasks for services that do not use a load balancer are considered
+//     healthy if they're in the RUNNING state. Tasks for services that use a
+//     load balancer are considered healthy if they're in the RUNNING state and
+//     are reported as healthy by the load balancer.
 //
-//    * The maximumPercent parameter represents an upper limit on the number
-//    of running tasks during task replacement. You can use this to define the
-//    replacement batch size. For example, if desiredCount is four tasks, a
-//    maximum of 200% starts four new tasks before stopping the four tasks to
-//    be drained, provided that the cluster resources required to do this are
-//    available. If the maximum is 100%, then replacement tasks can't start
-//    until the draining tasks have stopped.
+//   - The maximumPercent parameter represents an upper limit on the number
+//     of running tasks during task replacement. You can use this to define the
+//     replacement batch size. For example, if desiredCount is four tasks, a
+//     maximum of 200% starts four new tasks before stopping the four tasks to
+//     be drained, provided that the cluster resources required to do this are
+//     available. If the maximum is 100%, then replacement tasks can't start
+//     until the draining tasks have stopped.
 //
 // Any PENDING or RUNNING tasks that do not belong to a service aren't affected.
 // You must wait for them to finish or stop them manually.
@@ -5504,22 +5484,23 @@ func (c *ECS) UpdateContainerInstancesStateRequest(input *UpdateContainerInstanc
 // API operation UpdateContainerInstancesState for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
+//
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerInstancesState
 func (c *ECS) UpdateContainerInstancesState(input *UpdateContainerInstancesStateInput) (*UpdateContainerInstancesStateOutput, error) {
@@ -5559,14 +5540,13 @@ const opUpdateService = "UpdateService"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateServiceRequest method.
+//	req, resp := client.UpdateServiceRequest(params)
 //
-//    // Example sending a request using the UpdateServiceRequest method.
-//    req, resp := client.UpdateServiceRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService
 func (c *ECS) UpdateServiceRequest(input *UpdateServiceInput) (req *request.Request, output *UpdateServiceOutput) {
@@ -5586,13 +5566,6 @@ func (c *ECS) UpdateServiceRequest(input *UpdateServiceInput) (req *request.Requ
 }
 
 // UpdateService API operation for Amazon EC2 Container Service.
-//
-//
-// Updating the task placement strategies and constraints on an Amazon ECS service
-// remains in preview and is a Beta Service as defined by and subject to the
-// Beta Service Participation Service Terms located at https://aws.amazon.com/service-terms
-// (https://aws.amazon.com/service-terms) ("Beta Terms"). These Beta Terms apply
-// to your participation in this preview.
 //
 // Modifies the parameters of a service.
 //
@@ -5638,19 +5611,19 @@ func (c *ECS) UpdateServiceRequest(input *UpdateServiceInput) (req *request.Requ
 // uses the deployment configuration parameters, minimumHealthyPercent and maximumPercent,
 // to determine the deployment strategy.
 //
-//    * If minimumHealthyPercent is below 100%, the scheduler can ignore desiredCount
-//    temporarily during a deployment. For example, if desiredCount is four
-//    tasks, a minimum of 50% allows the scheduler to stop two existing tasks
-//    before starting two new tasks. Tasks for services that don't use a load
-//    balancer are considered healthy if they're in the RUNNING state. Tasks
-//    for services that use a load balancer are considered healthy if they're
-//    in the RUNNING state and are reported as healthy by the load balancer.
+//   - If minimumHealthyPercent is below 100%, the scheduler can ignore desiredCount
+//     temporarily during a deployment. For example, if desiredCount is four
+//     tasks, a minimum of 50% allows the scheduler to stop two existing tasks
+//     before starting two new tasks. Tasks for services that don't use a load
+//     balancer are considered healthy if they're in the RUNNING state. Tasks
+//     for services that use a load balancer are considered healthy if they're
+//     in the RUNNING state and are reported as healthy by the load balancer.
 //
-//    * The maximumPercent parameter represents an upper limit on the number
-//    of running tasks during a deployment. You can use it to define the deployment
-//    batch size. For example, if desiredCount is four tasks, a maximum of 200%
-//    starts four new tasks before stopping the four older tasks (provided that
-//    the cluster resources required to do this are available).
+//   - The maximumPercent parameter represents an upper limit on the number
+//     of running tasks during a deployment. You can use it to define the deployment
+//     batch size. For example, if desiredCount is four tasks, a maximum of 200%
+//     starts four new tasks before stopping the four older tasks (provided that
+//     the cluster resources required to do this are available).
 //
 // When UpdateService stops a task during a deployment, the equivalent of docker
 // stop is issued to the containers running in the task. This results in a SIGTERM
@@ -5661,32 +5634,32 @@ func (c *ECS) UpdateServiceRequest(input *UpdateServiceInput) (req *request.Requ
 // When the service scheduler launches new tasks, it determines task placement
 // in your cluster with the following logic.
 //
-//    * Determine which of the container instances in your cluster can support
-//    your service's task definition. For example, they have the required CPU,
-//    memory, ports, and container instance attributes.
+//   - Determine which of the container instances in your cluster can support
+//     your service's task definition. For example, they have the required CPU,
+//     memory, ports, and container instance attributes.
 //
-//    * By default, the service scheduler attempts to balance tasks across Availability
-//    Zones in this manner even though you can choose a different placement
-//    strategy. Sort the valid container instances by the fewest number of running
-//    tasks for this service in the same Availability Zone as the instance.
-//    For example, if zone A has one running service task and zones B and C
-//    each have zero, valid container instances in either zone B or C are considered
-//    optimal for placement. Place the new service task on a valid container
-//    instance in an optimal Availability Zone (based on the previous steps),
-//    favoring container instances with the fewest number of running tasks for
-//    this service.
+//   - By default, the service scheduler attempts to balance tasks across Availability
+//     Zones in this manner even though you can choose a different placement
+//     strategy. Sort the valid container instances by the fewest number of running
+//     tasks for this service in the same Availability Zone as the instance.
+//     For example, if zone A has one running service task and zones B and C
+//     each have zero, valid container instances in either zone B or C are considered
+//     optimal for placement. Place the new service task on a valid container
+//     instance in an optimal Availability Zone (based on the previous steps),
+//     favoring container instances with the fewest number of running tasks for
+//     this service.
 //
 // When the service scheduler stops running tasks, it attempts to maintain balance
 // across the Availability Zones in your cluster using the following logic:
 //
-//    * Sort the container instances by the largest number of running tasks
-//    for this service in the same Availability Zone as the instance. For example,
-//    if zone A has one running service task and zones B and C each have two,
-//    container instances in either zone B or C are considered optimal for termination.
+//   - Sort the container instances by the largest number of running tasks
+//     for this service in the same Availability Zone as the instance. For example,
+//     if zone A has one running service task and zones B and C each have two,
+//     container instances in either zone B or C are considered optimal for termination.
 //
-//    * Stop the task on a container instance in an optimal Availability Zone
-//    (based on the previous steps), favoring container instances with the largest
-//    number of running tasks for this service.
+//   - Stop the task on a container instance in an optimal Availability Zone
+//     (based on the previous steps), favoring container instances with the largest
+//     number of running tasks for this service.
 //
 // You must have a service-linked role when you update any of the following
 // service properties. If you specified a custom IAM role when you created the
@@ -5695,9 +5668,9 @@ func (c *ECS) UpdateServiceRequest(input *UpdateServiceInput) (req *request.Requ
 // more information, see Service-linked roles (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
-//    * loadBalancers,
+//   - loadBalancers,
 //
-//    * serviceRegistries
+//   - serviceRegistries
 //
 // Returns awserr.Error for service API and SDK errors. Use runtime type assertions
 // with awserr.Error's Code and Message methods to get detailed information about
@@ -5707,40 +5680,41 @@ func (c *ECS) UpdateServiceRequest(input *UpdateServiceInput) (req *request.Requ
 // API operation UpdateService for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * ServiceNotActiveException
-//   The specified service isn't active. You can't update a service that's inactive.
-//   If you have previously deleted a service, you can re-create it with CreateService.
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
 //
-//   * PlatformUnknownException
-//   The specified platform version doesn't exist.
+//   - ServiceNotActiveException
+//     The specified service isn't active. You can't update a service that's inactive.
+//     If you have previously deleted a service, you can re-create it with CreateService.
 //
-//   * PlatformTaskDefinitionIncompatibilityException
-//   The specified platform version doesn't satisfy the required capabilities
-//   of the task definition.
+//   - PlatformUnknownException
+//     The specified platform version doesn't exist.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - PlatformTaskDefinitionIncompatibilityException
+//     The specified platform version doesn't satisfy the required capabilities
+//     of the task definition.
+//
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService
 func (c *ECS) UpdateService(input *UpdateServiceInput) (*UpdateServiceOutput, error) {
@@ -5780,14 +5754,13 @@ const opUpdateServicePrimaryTaskSet = "UpdateServicePrimaryTaskSet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateServicePrimaryTaskSetRequest method.
+//	req, resp := client.UpdateServicePrimaryTaskSetRequest(params)
 //
-//    // Example sending a request using the UpdateServicePrimaryTaskSetRequest method.
-//    req, resp := client.UpdateServicePrimaryTaskSetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet
 func (c *ECS) UpdateServicePrimaryTaskSetRequest(input *UpdateServicePrimaryTaskSetInput) (req *request.Request, output *UpdateServicePrimaryTaskSetOutput) {
@@ -5822,41 +5795,42 @@ func (c *ECS) UpdateServicePrimaryTaskSetRequest(input *UpdateServicePrimaryTask
 // API operation UpdateServicePrimaryTaskSet for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * ServiceNotActiveException
-//   The specified service isn't active. You can't update a service that's inactive.
-//   If you have previously deleted a service, you can re-create it with CreateService.
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
 //
-//   * TaskSetNotFoundException
-//   The specified task set wasn't found. You can view your available task sets
-//   with DescribeTaskSets. Task sets are specific to each cluster, service and
-//   Region.
+//   - ServiceNotActiveException
+//     The specified service isn't active. You can't update a service that's inactive.
+//     If you have previously deleted a service, you can re-create it with CreateService.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - TaskSetNotFoundException
+//     The specified task set wasn't found. You can view your available task sets
+//     with DescribeTaskSets. Task sets are specific to each cluster, service and
+//     Region.
+//
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet
 func (c *ECS) UpdateServicePrimaryTaskSet(input *UpdateServicePrimaryTaskSetInput) (*UpdateServicePrimaryTaskSetOutput, error) {
@@ -5896,14 +5870,13 @@ const opUpdateTaskSet = "UpdateTaskSet"
 // This method is useful when you want to inject custom logic or configuration
 // into the SDK's request lifecycle. Such as custom headers, or retry logic.
 //
+//	// Example sending a request using the UpdateTaskSetRequest method.
+//	req, resp := client.UpdateTaskSetRequest(params)
 //
-//    // Example sending a request using the UpdateTaskSetRequest method.
-//    req, resp := client.UpdateTaskSetRequest(params)
-//
-//    err := req.Send()
-//    if err == nil { // resp is now filled
-//        fmt.Println(resp)
-//    }
+//	err := req.Send()
+//	if err == nil { // resp is now filled
+//	    fmt.Println(resp)
+//	}
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet
 func (c *ECS) UpdateTaskSetRequest(input *UpdateTaskSetInput) (req *request.Request, output *UpdateTaskSetOutput) {
@@ -5936,41 +5909,42 @@ func (c *ECS) UpdateTaskSetRequest(input *UpdateTaskSetInput) (req *request.Requ
 // API operation UpdateTaskSet for usage and error information.
 //
 // Returned Error Types:
-//   * ServerException
-//   These errors are usually caused by a server issue.
 //
-//   * ClientException
-//   These errors are usually caused by a client action. This client action might
-//   be using an action or resource on behalf of a user that doesn't have permissions
-//   to use the action or resource,. Or, it might be specifying an identifier
-//   that isn't valid.
+//   - ServerException
+//     These errors are usually caused by a server issue.
 //
-//   * InvalidParameterException
-//   The specified parameter isn't valid. Review the available parameters for
-//   the API request.
+//   - ClientException
+//     These errors are usually caused by a client action. This client action might
+//     be using an action or resource on behalf of a user that doesn't have permissions
+//     to use the action or resource,. Or, it might be specifying an identifier
+//     that isn't valid.
 //
-//   * ClusterNotFoundException
-//   The specified cluster wasn't found. You can view your available clusters
-//   with ListClusters. Amazon ECS clusters are Region specific.
+//   - InvalidParameterException
+//     The specified parameter isn't valid. Review the available parameters for
+//     the API request.
 //
-//   * UnsupportedFeatureException
-//   The specified task isn't supported in this Region.
+//   - ClusterNotFoundException
+//     The specified cluster wasn't found. You can view your available clusters
+//     with ListClusters. Amazon ECS clusters are Region specific.
 //
-//   * AccessDeniedException
-//   You don't have authorization to perform the requested action.
+//   - UnsupportedFeatureException
+//     The specified task isn't supported in this Region.
 //
-//   * ServiceNotFoundException
-//   The specified service wasn't found. You can view your available services
-//   with ListServices. Amazon ECS services are cluster specific and Region specific.
+//   - AccessDeniedException
+//     You don't have authorization to perform the requested action.
 //
-//   * ServiceNotActiveException
-//   The specified service isn't active. You can't update a service that's inactive.
-//   If you have previously deleted a service, you can re-create it with CreateService.
+//   - ServiceNotFoundException
+//     The specified service wasn't found. You can view your available services
+//     with ListServices. Amazon ECS services are cluster specific and Region specific.
 //
-//   * TaskSetNotFoundException
-//   The specified task set wasn't found. You can view your available task sets
-//   with DescribeTaskSets. Task sets are specific to each cluster, service and
-//   Region.
+//   - ServiceNotActiveException
+//     The specified service isn't active. You can't update a service that's inactive.
+//     If you have previously deleted a service, you can re-create it with CreateService.
+//
+//   - TaskSetNotFoundException
+//     The specified task set wasn't found. You can view your available task sets
+//     with DescribeTaskSets. Task sets are specific to each cluster, service and
+//     Region.
 //
 // See also, https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet
 func (c *ECS) UpdateTaskSet(input *UpdateTaskSetInput) (*UpdateTaskSetOutput, error) {
@@ -6935,8 +6909,8 @@ type Cluster struct {
 	ActiveServicesCount *int64 `locationName:"activeServicesCount" type:"integer"`
 
 	// The resources attached to a cluster. When using a capacity provider with
-	// a cluster, the Auto Scaling plan that's created is returned as a cluster
-	// attachment.
+	// a cluster, the capacity provider and associated resources are returned as
+	// cluster attachments.
 	Attachments []*Attachment `locationName:"attachments" type:"list"`
 
 	// The status of the capacity providers associated with the cluster. The following
@@ -6944,8 +6918,7 @@ type Cluster struct {
 	//
 	// UPDATE_IN_PROGRESS
 	//
-	// The available capacity providers for the cluster are updating. This occurs
-	// when the Auto Scaling plan is provisioning or deprovisioning.
+	// The available capacity providers for the cluster are updating.
 	//
 	// UPDATE_COMPLETE
 	//
@@ -6959,10 +6932,9 @@ type Cluster struct {
 	// The capacity providers associated with the cluster.
 	CapacityProviders []*string `locationName:"capacityProviders" type:"list"`
 
-	// The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
-	// the arn:aws:ecs namespace, followed by the Region of the cluster, the Amazon
-	// Web Services account ID of the cluster owner, the cluster namespace, and
-	// then the cluster name. For example, arn:aws:ecs:region:012345678910:cluster/test.
+	// The Amazon Resource Name (ARN) that identifies the cluster. For more information
+	// about the ARN format, see Amazon Resource Name (ARN) (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids)
+	// in the Amazon ECS Developer Guide.
 	ClusterArn *string `locationName:"clusterArn" type:"string"`
 
 	// A user-generated string that you use to identify your cluster.
@@ -7762,8 +7734,9 @@ type ContainerDefinition struct {
 	Cpu *int64 `locationName:"cpu" type:"integer"`
 
 	// The dependencies defined for container startup and shutdown. A container
-	// can contain multiple dependencies. When a dependency is defined for container
-	// startup, for container shutdown it is reversed.
+	// can contain multiple dependencies on other containers in a task definition.
+	// When a dependency is defined for container startup, for container shutdown
+	// it is reversed.
 	//
 	// For tasks using the EC2 launch type, the container instances require at least
 	// version 1.26.0 of the container agent to turn on container dependencies.
@@ -8043,12 +8016,10 @@ type ContainerDefinition struct {
 	// is placed. Otherwise, the value of memory is used.
 	//
 	// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory
-	// for a container, so you should not specify fewer than 6 MiB of memory for
-	// your containers.
+	// for a container. So, don't specify less than 6 MiB of memory for your containers.
 	//
 	// The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory
-	// for a container, so you should not specify fewer than 4 MiB of memory for
-	// your containers.
+	// for a container. So, don't specify less than 4 MiB of memory for your containers.
 	Memory *int64 `locationName:"memory" type:"integer"`
 
 	// The soft limit (in MiB) of memory to reserve for the container. When system
@@ -8075,9 +8046,11 @@ type ContainerDefinition struct {
 	// resources on the container instance, but also allow the container to consume
 	// more memory resources when needed.
 	//
-	// The Docker daemon reserves a minimum of 4 MiB of memory for a container.
-	// Therefore, we recommend that you specify fewer than 4 MiB of memory for your
-	// containers.
+	// The Docker 20.10.0 or later daemon reserves a minimum of 6 MiB of memory
+	// for a container. So, don't specify less than 6 MiB of memory for your containers.
+	//
+	// The Docker 19.03.13-ce or earlier daemon reserves a minimum of 4 MiB of memory
+	// for a container. So, don't specify less than 4 MiB of memory for your containers.
 	MemoryReservation *int64 `locationName:"memoryReservation" type:"integer"`
 
 	// The mount points for data volumes in your container.
@@ -8663,9 +8636,9 @@ func (s *ContainerDefinition) SetWorkingDirectory(v string) *ContainerDefinition
 // For tasks that use the Fargate launch type, the task or service requires
 // the following platforms:
 //
-//    * Linux platform version 1.3.0 or later.
+//   - Linux platform version 1.3.0 or later.
 //
-//    * Windows platform version 1.0.0 or later.
+//   - Windows platform version 1.0.0 or later.
 type ContainerDependency struct {
 	_ struct{} `type:"structure"`
 
@@ -8745,21 +8718,22 @@ func (s *ContainerDependency) SetContainerName(v string) *ContainerDependency {
 	return s
 }
 
-// An EC2 instance that's running the Amazon ECS agent and has been registered
-// with a cluster.
+// An Amazon EC2 or External instance that's running the Amazon ECS agent and
+// has been registered with a cluster.
 type ContainerInstance struct {
 	_ struct{} `type:"structure"`
 
-	// This parameter returns true if the agent is connected to Amazon ECS. Registered
-	// instances with an agent that may be unhealthy or stopped return false. Only
-	// instances connected to an agent can accept placement requests.
+	// This parameter returns true if the agent is connected to Amazon ECS. An instance
+	// with an agent that may be unhealthy or stopped return false. Only instances
+	// connected to an agent can accept task placement requests.
 	AgentConnected *bool `locationName:"agentConnected" type:"boolean"`
 
 	// The status of the most recent agent update. If an update wasn't ever requested,
 	// this value is NULL.
 	AgentUpdateStatus *string `locationName:"agentUpdateStatus" type:"string" enum:"AgentUpdateStatus"`
 
-	// The resources attached to a container instance, such as elastic network interfaces.
+	// The resources attached to a container instance, such as an elastic network
+	// interface.
 	Attachments []*Attachment `locationName:"attachments" type:"list"`
 
 	// The attributes set for the container instance, either by the Amazon ECS container
@@ -8769,10 +8743,9 @@ type ContainerInstance struct {
 	// The capacity provider that's associated with the container instance.
 	CapacityProviderName *string `locationName:"capacityProviderName" type:"string"`
 
-	// The Amazon Resource Name (ARN) of the container instance. The ARN contains
-	// the arn:aws:ecs namespace, followed by the Region of the container instance,
-	// the Amazon Web Services account ID of the container instance owner, the container-instance
-	// namespace, and then the container instance ID. For example, arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID.
+	// The Amazon Resource Name (ARN) of the container instance. For more information
+	// about the ARN format, see Amazon Resource Name (ARN) (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids)
+	// in the Amazon ECS Developer Guide.
 	ContainerInstanceArn *string `locationName:"containerInstanceArn" type:"string"`
 
 	// The ID of the container instance. For Amazon EC2 instances, this value is
@@ -8826,7 +8799,7 @@ type ContainerInstance struct {
 	// The ACTIVE status indicates that the container instance can accept tasks.
 	// The DRAINING indicates that new tasks aren't placed on the container instance
 	// and any service tasks running on the container instance are removed if possible.
-	// For more information, see Container Instance Draining (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html)
+	// For more information, see Container instance draining (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	Status *string `locationName:"status" type:"string"`
 
@@ -9642,7 +9615,7 @@ type CreateServiceInput struct {
 	DesiredCount *int64 `locationName:"desiredCount" type:"integer"`
 
 	// Specifies whether to turn on Amazon ECS managed tags for the tasks within
-	// the service. For more information, see Tagging Your Amazon ECS Resources
+	// the service. For more information, see Tagging your Amazon ECS resources
 	// (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	EnableECSManagedTags *bool `locationName:"enableECSManagedTags" type:"boolean"`
@@ -9693,7 +9666,7 @@ type CreateServiceInput struct {
 	LaunchType *string `locationName:"launchType" type:"string" enum:"LaunchType"`
 
 	// A load balancer object representing the load balancers to use with your service.
-	// For more information, see Service Load Balancing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html)
+	// For more information, see Service load balancing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	//
 	// If the service uses the rolling update (ECS) deployment controller and using
@@ -10153,7 +10126,7 @@ type CreateTaskSetInput struct {
 	ExternalId *string `locationName:"externalId" type:"string"`
 
 	// The launch type that new tasks in the task set uses. For more information,
-	// see Amazon ECS Launch Types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html)
+	// see Amazon ECS launch types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	//
 	// If a launchType is specified, the capacityProviderStrategy parameter must
@@ -10184,7 +10157,7 @@ type CreateTaskSetInput struct {
 	Service *string `locationName:"service" type:"string" required:"true"`
 
 	// The details of the service discovery registries to assign to this task set.
-	// For more information, see Service Discovery (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html).
+	// For more information, see Service discovery (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html).
 	ServiceRegistries []*ServiceRegistry `locationName:"serviceRegistries" type:"list"`
 
 	// The metadata that you apply to the task set to help you categorize and organize
@@ -11172,7 +11145,6 @@ func (s *Deployment) SetUpdatedAt(v time.Time) *Deployment {
 	return s
 }
 
-//
 // The deployment circuit breaker can only be used for services using the rolling
 // update (ECS) deployment type that aren't behind a Classic Load Balancer.
 //
@@ -11260,19 +11232,18 @@ type DeploymentConfiguration struct {
 	// the service is rolled back to the last deployment that completed successfully.
 	DeploymentCircuitBreaker *DeploymentCircuitBreaker `locationName:"deploymentCircuitBreaker" type:"structure"`
 
-	// If a service is using the rolling update (ECS) deployment type, the maximum
-	// percent parameter represents an upper limit on the number of tasks in a service
+	// If a service is using the rolling update (ECS) deployment type, the maximumPercent
+	// parameter represents an upper limit on the number of your service's tasks
 	// that are allowed in the RUNNING or PENDING state during a deployment, as
-	// a percentage of the desired number of tasks (rounded down to the nearest
-	// integer), and while any container instances are in the DRAINING state if
-	// the service contains tasks using the EC2 launch type. This parameter enables
-	// you to define the deployment batch size. For example, if your service has
-	// a desired number of four tasks and a maximum percent value of 200%, the scheduler
-	// may start four new tasks before stopping the four older tasks (provided that
-	// the cluster resources required to do this are available). The default value
-	// for maximum percent is 200%.
+	// a percentage of the desiredCount (rounded down to the nearest integer). This
+	// parameter enables you to define the deployment batch size. For example, if
+	// your service is using the REPLICA service scheduler and has a desiredCount
+	// of four tasks and a maximumPercent value of 200%, the scheduler may start
+	// four new tasks before stopping the four older tasks (provided that the cluster
+	// resources required to do this are available). The default maximumPercent
+	// value for a service using the REPLICA service scheduler is 200%.
 	//
-	// If a service is using the blue/green (CODE_DEPLOY) or EXTERNAL deployment
+	// If a service is using either the blue/green (CODE_DEPLOY) or EXTERNAL deployment
 	// types and tasks that use the EC2 launch type, the maximum percent value is
 	// set to the default value and is used to define the upper limit on the number
 	// of the tasks in the service that remain in the RUNNING state while the container
@@ -11281,28 +11252,51 @@ type DeploymentConfiguration struct {
 	// returned when describing your service.
 	MaximumPercent *int64 `locationName:"maximumPercent" type:"integer"`
 
-	// If a service is using the rolling update (ECS) deployment type, the minimum
-	// healthy percent represents a lower limit on the number of tasks in a service
-	// that must remain in the RUNNING state during a deployment, as a percentage
-	// of the desired number of tasks (rounded up to the nearest integer), and while
-	// any container instances are in the DRAINING state if the service contains
-	// tasks using the EC2 launch type. This parameter enables you to deploy without
-	// using additional cluster capacity. For example, if your service has a desired
-	// number of four tasks and a minimum healthy percent of 50%, the scheduler
-	// may stop two existing tasks to free up cluster capacity before starting two
-	// new tasks. Tasks for services that do not use a load balancer are considered
-	// healthy if they're in the RUNNING state; tasks for services that do use a
-	// load balancer are considered healthy if they're in the RUNNING state and
-	// they're reported as healthy by the load balancer. The default value for minimum
-	// healthy percent is 100%.
+	// If a service is using the rolling update (ECS) deployment type, the minimumHealthyPercent
+	// represents a lower limit on the number of your service's tasks that must
+	// remain in the RUNNING state during a deployment, as a percentage of the desiredCount
+	// (rounded up to the nearest integer). This parameter enables you to deploy
+	// without using additional cluster capacity. For example, if your service has
+	// a desiredCount of four tasks and a minimumHealthyPercent of 50%, the service
+	// scheduler may stop two existing tasks to free up cluster capacity before
+	// starting two new tasks.
 	//
-	// If a service is using the blue/green (CODE_DEPLOY) or EXTERNAL deployment
-	// types and tasks that use the EC2 launch type, the minimum healthy percent
-	// value is set to the default value and is used to define the lower limit on
-	// the number of the tasks in the service that remain in the RUNNING state while
-	// the container instances are in the DRAINING state. If the tasks in the service
-	// use the Fargate launch type, the minimum healthy percent value is not used,
-	// although it is returned when describing your service.
+	// For services that do not use a load balancer, the following should be noted:
+	//
+	//    * A service is considered healthy if all essential containers within the
+	//    tasks in the service pass their health checks.
+	//
+	//    * If a task has no essential containers with a health check defined, the
+	//    service scheduler will wait for 40 seconds after a task reaches a RUNNING
+	//    state before the task is counted towards the minimum healthy percent total.
+	//
+	//    * If a task has one or more essential containers with a health check defined,
+	//    the service scheduler will wait for the task to reach a healthy status
+	//    before counting it towards the minimum healthy percent total. A task is
+	//    considered healthy when all essential containers within the task have
+	//    passed their health checks. The amount of time the service scheduler can
+	//    wait for is determined by the container health check settings.
+	//
+	// For services are that do use a load balancer, the following should be noted:
+	//
+	//    * If a task has no essential containers with a health check defined, the
+	//    service scheduler will wait for the load balancer target group health
+	//    check to return a healthy status before counting the task towards the
+	//    minimum healthy percent total.
+	//
+	//    * If a task has an essential container with a health check defined, the
+	//    service scheduler will wait for both the task to reach a healthy status
+	//    and the load balancer target group health check to return a healthy status
+	//    before counting the task towards the minimum healthy percent total.
+	//
+	// If a service is using either the blue/green (CODE_DEPLOY) or EXTERNAL deployment
+	// types and is running tasks that use the EC2 launch type, the minimum healthy
+	// percent value is set to the default value and is used to define the lower
+	// limit on the number of the tasks in the service that remain in the RUNNING
+	// state while the container instances are in the DRAINING state. If a service
+	// is using either the blue/green (CODE_DEPLOY) or EXTERNAL deployment types
+	// and is running tasks that use the Fargate launch type, the minimum healthy
+	// percent value is not used, although it is returned when describing your service.
 	MinimumHealthyPercent *int64 `locationName:"minimumHealthyPercent" type:"integer"`
 }
 
@@ -11358,7 +11352,7 @@ func (s *DeploymentConfiguration) SetMinimumHealthyPercent(v int64) *DeploymentC
 }
 
 // The deployment controller to use for the service. For more information, see
-// Amazon ECS Deployment Types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
+// Amazon ECS deployment types (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type DeploymentController struct {
 	_ struct{} `type:"structure"`
@@ -11437,10 +11431,9 @@ type DeregisterContainerInstanceInput struct {
 	Cluster *string `locationName:"cluster" type:"string"`
 
 	// The container instance ID or full ARN of the container instance to deregister.
-	// The ARN contains the arn:aws:ecs namespace, followed by the Region of the
-	// container instance, the Amazon Web Services account ID of the container instance
-	// owner, the container-instance namespace, and then the container instance
-	// ID. For example, arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID.
+	// For more information about the ARN format, see Amazon Resource Name (ARN)
+	// (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids)
+	// in the Amazon ECS Developer Guide.
 	//
 	// ContainerInstance is a required field
 	ContainerInstance *string `locationName:"containerInstance" type:"string" required:"true"`
@@ -12488,11 +12481,9 @@ type DiscoverPollEndpointInput struct {
 	// container instance belongs to.
 	Cluster *string `locationName:"cluster" type:"string"`
 
-	// The container instance ID or full ARN of the container instance. The ARN
-	// contains the arn:aws:ecs namespace, followed by the Region of the container
-	// instance, the Amazon Web Services account ID of the container instance owner,
-	// the container-instance namespace, and then the container instance ID. For
-	// example, arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID.
+	// The container instance ID or full ARN of the container instance. For more
+	// information about the ARN format, see Amazon Resource Name (ARN) (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids)
+	// in the Amazon ECS Developer Guide.
 	ContainerInstance *string `locationName:"containerInstance" type:"string"`
 }
 
@@ -12666,7 +12657,7 @@ type EFSAuthorizationConfig struct {
 	// be omitted or set to / which will enforce the path set on the EFS access
 	// point. If an access point is used, transit encryption must be enabled in
 	// the EFSVolumeConfiguration. For more information, see Working with Amazon
-	// EFS Access Points (https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)
+	// EFS access points (https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html)
 	// in the Amazon Elastic File System User Guide.
 	AccessPointId *string `locationName:"accessPointId" type:"string"`
 
@@ -12674,7 +12665,7 @@ type EFSAuthorizationConfig struct {
 	// definition when mounting the Amazon EFS file system. If enabled, transit
 	// encryption must be enabled in the EFSVolumeConfiguration. If this parameter
 	// is omitted, the default value of DISABLED is used. For more information,
-	// see Using Amazon EFS Access Points (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints)
+	// see Using Amazon EFS access points (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints)
 	// in the Amazon Elastic Container Service Developer Guide.
 	Iam *string `locationName:"iam" type:"string" enum:"EFSAuthorizationConfigIAM"`
 }
@@ -12710,7 +12701,7 @@ func (s *EFSAuthorizationConfig) SetIam(v string) *EFSAuthorizationConfig {
 }
 
 // This parameter is specified when you're using an Amazon Elastic File System
-// file system for task storage. For more information, see Amazon EFS Volumes
+// file system for task storage. For more information, see Amazon EFS volumes
 // (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type EFSVolumeConfiguration struct {
@@ -12738,14 +12729,14 @@ type EFSVolumeConfiguration struct {
 	// the Amazon ECS host and the Amazon EFS server. Transit encryption must be
 	// enabled if Amazon EFS IAM authorization is used. If this parameter is omitted,
 	// the default value of DISABLED is used. For more information, see Encrypting
-	// Data in Transit (https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html)
+	// data in transit (https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html)
 	// in the Amazon Elastic File System User Guide.
 	TransitEncryption *string `locationName:"transitEncryption" type:"string" enum:"EFSTransitEncryption"`
 
 	// The port to use when sending encrypted data between the Amazon ECS host and
 	// the Amazon EFS server. If you do not specify a transit encryption port, it
 	// will use the port selection strategy that the Amazon EFS mount helper uses.
-	// For more information, see EFS Mount Helper (https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html)
+	// For more information, see EFS mount helper (https://docs.aws.amazon.com/efs/latest/ug/efs-mount-helper.html)
 	// in the Amazon Elastic File System User Guide.
 	TransitEncryptionPort *int64 `locationName:"transitEncryptionPort" type:"integer"`
 }
@@ -12829,9 +12820,9 @@ func (s *EFSVolumeConfiguration) SetTransitEncryptionPort(v int64) *EFSVolumeCon
 // This parameter is only supported for tasks hosted on Fargate using the following
 // platform versions:
 //
-//    * Linux platform version 1.4.0 or later.
+//   - Linux platform version 1.4.0 or later.
 //
-//    * Windows platform version 1.0.0 or later.
+//   - Windows platform version 1.0.0 or later.
 type EnvironmentFile struct {
 	_ struct{} `type:"structure"`
 
@@ -13261,7 +13252,7 @@ func (s *ExecuteCommandOutput) SetTaskArn(v string) *ExecuteCommandOutput {
 
 // The authorization configuration details for Amazon FSx for Windows File Server
 // file system. See FSxWindowsFileServerVolumeConfiguration (https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_FSxWindowsFileServerVolumeConfiguration.html)
-// in the Amazon Elastic Container Service API Reference.
+// in the Amazon ECS API Reference.
 //
 // For more information and the input format, see Amazon FSx for Windows File
 // Server Volumes (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html)
@@ -13271,7 +13262,7 @@ type FSxWindowsFileServerAuthorizationConfig struct {
 
 	// The authorization credential option to use. The authorization credential
 	// options can be provided using either the Amazon Resource Name (ARN) of an
-	// Secrets Manager secret or SSM Parameter Store parameter. The ARNs refer to
+	// Secrets Manager secret or SSM Parameter Store parameter. The ARN refers to
 	// the stored credentials.
 	//
 	// CredentialsParameter is a required field
@@ -13335,7 +13326,7 @@ func (s *FSxWindowsFileServerAuthorizationConfig) SetDomain(v string) *FSxWindow
 // file system for task storage.
 //
 // For more information and the input format, see Amazon FSx for Windows File
-// Server Volumes (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html)
+// Server volumes (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type FSxWindowsFileServerVolumeConfiguration struct {
 	_ struct{} `type:"structure"`
@@ -13471,7 +13462,7 @@ func (s *Failure) SetReason(v string) *Failure {
 
 // The FireLens configuration for the container. This is used to specify and
 // configure a log router for container logs. For more information, see Custom
-// Log Routing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html)
+// log routing (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type FirelensConfiguration struct {
 	_ struct{} `type:"structure"`
@@ -13480,8 +13471,8 @@ type FirelensConfiguration struct {
 	// and can be used to specify a custom configuration file or to add additional
 	// metadata, such as the task, task definition, cluster, and container instance
 	// details to the log event. If specified, the syntax to use is "options":{"enable-ecs-log-metadata":"true|false","config-file-type:"s3|file","config-file-value":"arn:aws:s3:::mybucket/fluent.conf|filepath"}.
-	// For more information, see Creating a Task Definition that Uses a FireLens
-	// Configuration (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef)
+	// For more information, see Creating a task definition that uses a FireLens
+	// configuration (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_firelens.html#firelens-taskdef)
 	// in the Amazon Elastic Container Service Developer Guide.
 	//
 	// Tasks hosted on Fargate only support the file configuration file type.
@@ -13552,25 +13543,25 @@ func (s *FirelensConfiguration) SetType(v string) *FirelensConfiguration {
 //
 // The following describes the possible healthStatus values for a container:
 //
-//    * HEALTHY-The container health check has passed successfully.
+//   - HEALTHY-The container health check has passed successfully.
 //
-//    * UNHEALTHY-The container health check has failed.
+//   - UNHEALTHY-The container health check has failed.
 //
-//    * UNKNOWN-The container health check is being evaluated or there's no
-//    container health check defined.
+//   - UNKNOWN-The container health check is being evaluated or there's no
+//     container health check defined.
 //
 // The following describes the possible healthStatus values for a task. The
 // container health check status of nonessential containers do not have an effect
 // on the health status of a task.
 //
-//    * HEALTHY-All essential containers within the task have passed their health
-//    checks.
+//   - HEALTHY-All essential containers within the task have passed their health
+//     checks.
 //
-//    * UNHEALTHY-One or more essential containers have failed their health
-//    check.
+//   - UNHEALTHY-One or more essential containers have failed their health
+//     check.
 //
-//    * UNKNOWN-The essential containers within the task are still having their
-//    health checks evaluated or there are no container health checks defined.
+//   - UNKNOWN-The essential containers within the task are still having their
+//     health checks evaluated or there are no container health checks defined.
 //
 // If a task is run manually, and not as part of a service, the task will continue
 // its lifecycle regardless of its health status. For tasks that are part of
@@ -13579,21 +13570,21 @@ func (s *FirelensConfiguration) SetType(v string) *FirelensConfiguration {
 //
 // The following are notes about container health check support:
 //
-//    * Container health checks require version 1.17.0 or greater of the Amazon
-//    ECS container agent. For more information, see Updating the Amazon ECS
-//    Container Agent (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html).
+//   - Container health checks require version 1.17.0 or greater of the Amazon
+//     ECS container agent. For more information, see Updating the Amazon ECS
+//     container agent (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html).
 //
-//    * Container health checks are supported for Fargate tasks if you're using
-//    platform version 1.1.0 or greater. For more information, see Fargate Platform
-//    Versions (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html).
+//   - Container health checks are supported for Fargate tasks if you're using
+//     platform version 1.1.0 or greater. For more information, see Fargate platform
+//     versions (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html).
 //
-//    * Container health checks aren't supported for tasks that are part of
-//    a service that's configured to use a Classic Load Balancer.
+//   - Container health checks aren't supported for tasks that are part of
+//     a service that's configured to use a Classic Load Balancer.
 type HealthCheck struct {
 	_ struct{} `type:"structure"`
 
 	// A string array representing the command that the container runs to determine
-	// if it is healthy. The string array must start with CMD to execute the command
+	// if it is healthy. The string array must start with CMD to run the command
 	// arguments directly, or CMD-SHELL to run the command with the container's
 	// default shell.
 	//
@@ -15545,7 +15536,7 @@ func (s *ListTasksOutput) SetTaskArns(v []*string) *ListTasksOutput {
 // the Elastic Load Balancing configuration.
 //
 // A service-linked role is required for services that use multiple target groups.
-// For more information, see Service-linked roles (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html)
+// For more information, see Using service-linked roles (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type LoadBalancer struct {
 	_ struct{} `type:"structure"`
@@ -15577,13 +15568,13 @@ type LoadBalancer struct {
 	// target group ARN.
 	//
 	// For services using the ECS deployment controller, you can specify one or
-	// multiple target groups. For more information, see Registering Multiple Target
-	// Groups with a Service (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html)
+	// multiple target groups. For more information, see Registering multiple target
+	// groups with a service (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	//
 	// For services using the CODE_DEPLOY deployment controller, you're required
 	// to define two target groups for the load balancer. For more information,
-	// see Blue/Green Deployment with CodeDeploy (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html)
+	// see Blue/green deployment with CodeDeploy (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	//
 	// If your service's task definition uses the awsvpc network mode, you must
@@ -15650,26 +15641,26 @@ func (s *LoadBalancer) SetTargetGroupArn(v string) *LoadBalancer {
 //
 // Understand the following when specifying a log configuration for your containers.
 //
-//    * Amazon ECS currently supports a subset of the logging drivers available
-//    to the Docker daemon (shown in the valid values below). Additional log
-//    drivers may be available in future releases of the Amazon ECS container
-//    agent.
+//   - Amazon ECS currently supports a subset of the logging drivers available
+//     to the Docker daemon (shown in the valid values below). Additional log
+//     drivers may be available in future releases of the Amazon ECS container
+//     agent.
 //
-//    * This parameter requires version 1.18 of the Docker Remote API or greater
-//    on your container instance.
+//   - This parameter requires version 1.18 of the Docker Remote API or greater
+//     on your container instance.
 //
-//    * For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container
-//    agent must register the available logging drivers with the ECS_AVAILABLE_LOGGING_DRIVERS
-//    environment variable before containers placed on that instance can use
-//    these log configuration options. For more information, see Amazon ECS
-//    container agent configuration (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html)
-//    in the Amazon Elastic Container Service Developer Guide.
+//   - For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container
+//     agent must register the available logging drivers with the ECS_AVAILABLE_LOGGING_DRIVERS
+//     environment variable before containers placed on that instance can use
+//     these log configuration options. For more information, see Amazon ECS
+//     container agent configuration (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html)
+//     in the Amazon Elastic Container Service Developer Guide.
 //
-//    * For tasks that are on Fargate, because you don't have access to the
-//    underlying infrastructure your tasks are hosted on, any additional software
-//    needed must be installed outside of the task. For example, the Fluentd
-//    output aggregators or a remote host running Logstash to send Gelf logs
-//    to.
+//   - For tasks that are on Fargate, because you don't have access to the
+//     underlying infrastructure your tasks are hosted on, any additional software
+//     needed must be installed outside of the task. For example, the Fluentd
+//     output aggregators or a remote host running Logstash to send Gelf logs
+//     to.
 type LogConfiguration struct {
 	_ struct{} `type:"structure"`
 
@@ -15706,7 +15697,7 @@ type LogConfiguration struct {
 	Options map[string]*string `locationName:"options" type:"map"`
 
 	// The secrets to pass to the log configuration. For more information, see Specifying
-	// Sensitive Data (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html)
+	// sensitive data (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html)
 	// in the Amazon Elastic Container Service Developer Guide.
 	SecretOptions []*Secret `locationName:"secretOptions" type:"list"`
 }
@@ -15920,7 +15911,7 @@ func (s *ManagedAgentStateChange) SetStatus(v string) *ManagedAgentStateChange {
 // actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling
 // policy using an Amazon ECS managed CloudWatch metric with the specified targetCapacity
 // value as the target value for the metric. For more information, see Using
-// Managed Scaling (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling)
+// managed scaling (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling)
 // in the Amazon Elastic Container Service Developer Guide.
 //
 // If managed scaling is disabled, the user must manage the scaling of the Auto
@@ -15933,14 +15924,23 @@ type ManagedScaling struct {
 	// is omitted, the default value of 300 seconds is used.
 	InstanceWarmupPeriod *int64 `locationName:"instanceWarmupPeriod" type:"integer"`
 
-	// The maximum number of container instances that Amazon ECS scales in or scales
-	// out at one time. If this parameter is omitted, the default value of 10000
-	// is used.
+	// The maximum number of Amazon EC2 instances that Amazon ECS will scale out
+	// at one time. The scale in process is not affected by this parameter. If this
+	// parameter is omitted, the default value of 10000 is used.
 	MaximumScalingStepSize *int64 `locationName:"maximumScalingStepSize" min:"1" type:"integer"`
 
-	// The minimum number of container instances that Amazon ECS scales in or scales
-	// out at one time. If this parameter is omitted, the default value of 1 is
-	// used.
+	// The minimum number of Amazon EC2 instances that Amazon ECS will scale out
+	// at one time. The scale in process is not affected by this parameter If this
+	// parameter is omitted, the default value of 1 is used.
+	//
+	// When additional capacity is required, Amazon ECS will scale up the minimum
+	// scaling step size even if the actual demand is less than the minimum scaling
+	// step size.
+	//
+	// If you use a capacity provider with an Auto Scaling group configured with
+	// more than one Amazon EC2 instance type or Availability Zone, Amazon ECS will
+	// scale up by the exact minimum scaling step size value and will ignore both
+	// the maximum scaling step size as well as the capacity demand.
 	MinimumScalingStepSize *int64 `locationName:"minimumScalingStepSize" min:"1" type:"integer"`
 
 	// Determines whether to use managed scaling for the capacity provider.
@@ -16368,7 +16368,7 @@ func (s *NoUpdateAvailableException) RequestID() string {
 }
 
 // An object representing a constraint on task placement. For more information,
-// see Task Placement Constraints (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html)
+// see Task placement constraints (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html)
 // in the Amazon Elastic Container Service Developer Guide.
 //
 // If you're using the Fargate launch type, task placement constraints aren't
@@ -16420,7 +16420,7 @@ func (s *PlacementConstraint) SetType(v string) *PlacementConstraint {
 }
 
 // The task placement strategy for a task or service. For more information,
-// see Task Placement Strategies (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html)
+// see Task placement strategies (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type PlacementStrategy struct {
 	_ struct{} `type:"structure"`
@@ -16715,9 +16715,6 @@ type PortMapping struct {
 	// range as these are reserved for automatic assignment. In general, ports below
 	// 32768 are outside of the ephemeral port range.
 	//
-	// The default ephemeral port range from 49153 through 65535 is always used
-	// for Docker versions before 1.6.0.
-	//
 	// The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
 	// and the Amazon ECS container agent ports 51678-51680. Any host port that
 	// was previously specified in a running task is also reserved while the task
@@ -16880,6 +16877,12 @@ type PutAccountSettingDefaultInput struct {
 	// the ENI limit for your Amazon ECS container instances is affected. If containerInsights
 	// is specified, the default setting for CloudWatch Container Insights for your
 	// clusters is affected.
+	//
+	// Fargate is transitioning from task count-based quotas to vCPU-based quotas.
+	// You can set the name to fargateVCPULimit to opt in or opt out of the vCPU-based
+	// quotas. For information about the opt in timeline, see Fargate vCPU-based
+	// quotas timeline (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline)
+	// in the Amazon ECS Developer Guide.
 	//
 	// Name is a required field
 	Name *string `locationName:"name" type:"string" required:"true" enum:"SettingName"`
@@ -17551,7 +17554,8 @@ type RegisterTaskDefinitionInput struct {
 	// We recommend specifying container-level resources for Windows containers.
 	//
 	// If you're using the EC2 launch type, this field is optional. Supported values
-	// are between 128 CPU units (0.125 vCPUs) and 10240 CPU units (10 vCPUs).
+	// are between 128 CPU units (0.125 vCPUs) and 10240 CPU units (10 vCPUs). If
+	// you do not specify a value, the parameter is ignored.
 	//
 	// If you're using the Fargate launch type, this field is required and you must
 	// use one of the following values, which determines your range of supported
@@ -17569,11 +17573,17 @@ type RegisterTaskDefinitionInput struct {
 	//    * 1024 (1 vCPU) - Available memory values: 2048 (2 GB), 3072 (3 GB), 4096
 	//    (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)
 	//
-	//    * 2048 (2 vCPU) - Available memory values: Between 4096 (4 GB) and 16384
-	//    (16 GB) in increments of 1024 (1 GB)
+	//    * 2048 (2 vCPU) - Available memory values: 4096 (4 GB) and 16384 (16 GB)
+	//    in increments of 1024 (1 GB)
 	//
-	//    * 4096 (4 vCPU) - Available memory values: Between 8192 (8 GB) and 30720
-	//    (30 GB) in increments of 1024 (1 GB)
+	//    * 4096 (4 vCPU) - Available memory values: 8192 (8 GB) and 30720 (30 GB)
+	//    in increments of 1024 (1 GB)
+	//
+	//    * 8192 (8 vCPU) - Available memory values: 16 GB and 60 GB in 4 GB increments
+	//    This option requires Linux platform 1.4.0 or later.
+	//
+	//    * 16384 (16vCPU) - Available memory values: 32GB and 120 GB in 8 GB increments
+	//    This option requires Linux platform 1.4.0 or later.
 	Cpu *string `locationName:"cpu" type:"string"`
 
 	// The amount of ephemeral storage to allocate for the task. This parameter
@@ -17586,8 +17596,6 @@ type RegisterTaskDefinitionInput struct {
 	// platform versions:
 	//
 	//    * Linux platform version 1.4.0 or later.
-	//
-	//    * Windows platform version 1.0.0 or later.
 	EphemeralStorage *EphemeralStorage `locationName:"ephemeralStorage" type:"structure"`
 
 	// The Amazon Resource Name (ARN) of the task execution role that grants the
@@ -17670,6 +17678,12 @@ type RegisterTaskDefinitionInput struct {
 	//
 	//    * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
 	//    Available cpu values: 4096 (4 vCPU)
+	//
+	//    * Between 16 GB and 60 GB in 4 GB increments - Available cpu values: 8192
+	//    (8 vCPU) This option requires Linux platform 1.4.0 or later.
+	//
+	//    * Between 32GB and 120 GB in 8 GB increments - Available cpu values: 16384
+	//    (16 vCPU) This option requires Linux platform 1.4.0 or later.
 	Memory *string `locationName:"memory" type:"string"`
 
 	// The Docker networking mode to use for the containers in the task. The valid
@@ -18734,7 +18748,7 @@ func (s *RunTaskOutput) SetTasks(v []*Task) *RunTaskOutput {
 
 // Information about the platform for the Amazon ECS service or task.
 //
-// For more informataion about RuntimePlatform, see RuntimePlatform (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform)
+// For more information about RuntimePlatform, see RuntimePlatform (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform)
 // in the Amazon Elastic Container Service Developer Guide.
 type RuntimePlatform struct {
 	_ struct{} `type:"structure"`
@@ -18742,7 +18756,7 @@ type RuntimePlatform struct {
 	// The CPU architecture.
 	//
 	// You can run your Linux tasks on an ARM-based platform by setting the value
-	// to ARM64. This option is avaiable for tasks that run on Linuc Amazon EC2
+	// to ARM64. This option is avaiable for tasks that run on Linux Amazon EC2
 	// instance or Linux containers on Fargate.
 	CpuArchitecture *string `locationName:"cpuArchitecture" type:"string" enum:"CPUArchitecture"`
 
@@ -18826,13 +18840,13 @@ func (s *Scale) SetValue(v float64) *Scale {
 // An object representing the secret to expose to your container. Secrets can
 // be exposed to a container in the following ways:
 //
-//    * To inject sensitive data into your containers as environment variables,
-//    use the secrets container definition parameter.
+//   - To inject sensitive data into your containers as environment variables,
+//     use the secrets container definition parameter.
 //
-//    * To reference sensitive information in the log configuration of a container,
-//    use the secretOptions container definition parameter.
+//   - To reference sensitive information in the log configuration of a container,
+//     use the secretOptions container definition parameter.
 //
-// For more information, see Specifying Sensitive Data (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html)
+// For more information, see Specifying sensitive data (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html)
 // in the Amazon Elastic Container Service Developer Guide.
 type Secret struct {
 	_ struct{} `type:"structure"`
@@ -18993,9 +19007,7 @@ type Service struct {
 	// deployment and the ordering of stopping and starting tasks.
 	DeploymentConfiguration *DeploymentConfiguration `locationName:"deploymentConfiguration" type:"structure"`
 
-	// The deployment controller type the service is using. When using the DescribeServices
-	// API, this field is omitted if the service uses the ECS deployment controller
-	// type.
+	// The deployment controller type the service is using.
 	DeploymentController *DeploymentController `locationName:"deploymentController" type:"structure"`
 
 	// The current state of deployments for the service.
@@ -19092,10 +19104,9 @@ type Service struct {
 	//    scheduling strategy.
 	SchedulingStrategy *string `locationName:"schedulingStrategy" type:"string" enum:"SchedulingStrategy"`
 
-	// The ARN that identifies the service. The ARN contains the arn:aws:ecs namespace,
-	// followed by the Region of the service, the Amazon Web Services account ID
-	// of the service owner, the service namespace, and then the service name. For
-	// example, arn:aws:ecs:region:012345678910:service/my-service.
+	// The ARN that identifies the service. For more information about the ARN format,
+	// see Amazon Resource Name (ARN) (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids)
+	// in the Amazon ECS Developer Guide.
 	ServiceArn *string `locationName:"serviceArn" type:"string"`
 
 	// The name of your service. Up to 255 letters (uppercase and lowercase), numbers,
@@ -20496,14 +20507,14 @@ func (s *SubmitTaskStateChangeOutput) SetAcknowledgment(v string) *SubmitTaskSta
 // for multiple containers in a single task. This task also uses either the
 // awsvpc or host network mode. It does it for the following reasons.
 //
-//    * For tasks that use the awsvpc network mode, if you set systemControls
-//    for any container, it applies to all containers in the task. If you set
-//    different systemControls for multiple containers in a single task, the
-//    container that's started last determines which systemControls take effect.
+//   - For tasks that use the awsvpc network mode, if you set systemControls
+//     for any container, it applies to all containers in the task. If you set
+//     different systemControls for multiple containers in a single task, the
+//     container that's started last determines which systemControls take effect.
 //
-//    * For tasks that use the host network mode, the systemControls parameter
-//    applies to the container instance's kernel parameter and that of all containers
-//    of any tasks running on that container instance.
+//   - For tasks that use the host network mode, the systemControls parameter
+//     applies to the container instance's kernel parameter and that of all containers
+//     of any tasks running on that container instance.
 type SystemControl struct {
 	_ struct{} `type:"structure"`
 
@@ -20549,26 +20560,26 @@ func (s *SystemControl) SetValue(v string) *SystemControl {
 //
 // The following basic restrictions apply to tags:
 //
-//    * Maximum number of tags per resource - 50
+//   - Maximum number of tags per resource - 50
 //
-//    * For each resource, each tag key must be unique, and each tag key can
-//    have only one value.
+//   - For each resource, each tag key must be unique, and each tag key can
+//     have only one value.
 //
-//    * Maximum key length - 128 Unicode characters in UTF-8
+//   - Maximum key length - 128 Unicode characters in UTF-8
 //
-//    * Maximum value length - 256 Unicode characters in UTF-8
+//   - Maximum value length - 256 Unicode characters in UTF-8
 //
-//    * If your tagging schema is used across multiple services and resources,
-//    remember that other services may have restrictions on allowed characters.
-//    Generally allowed characters are: letters, numbers, and spaces representable
-//    in UTF-8, and the following characters: + - = . _ : / @.
+//   - If your tagging schema is used across multiple services and resources,
+//     remember that other services may have restrictions on allowed characters.
+//     Generally allowed characters are: letters, numbers, and spaces representable
+//     in UTF-8, and the following characters: + - = . _ : / @.
 //
-//    * Tag keys and values are case-sensitive.
+//   - Tag keys and values are case-sensitive.
 //
-//    * Do not use aws:, AWS:, or any upper or lowercase combination of such
-//    as a prefix for either keys or values as it is reserved for Amazon Web
-//    Services use. You cannot edit or delete tag keys or values with this prefix.
-//    Tags with this prefix do not count against your tags per resource limit.
+//   - Do not use aws:, AWS:, or any upper or lowercase combination of such
+//     as a prefix for either keys or values as it is reserved for Amazon Web
+//     Services use. You cannot edit or delete tag keys or values with this prefix.
+//     Tags with this prefix do not count against your tags per resource limit.
 type Tag struct {
 	_ struct{} `type:"structure"`
 
@@ -20744,12 +20755,12 @@ func (s TagResourceOutput) GoString() string {
 // The execute command cannot run. This error can be caused by any of the following
 // configuration issues:
 //
-//    * Incorrect IAM permissions
+//   - Incorrect IAM permissions
 //
-//    * The SSM agent is not installed or is not running
+//   - The SSM agent is not installed or is not running
 //
-//    * There is an interface Amazon VPC endpoint for Amazon ECS, but there
-//    is not one for for Systems Manager Session Manager
+//   - There is an interface Amazon VPC endpoint for Amazon ECS, but there
+//     is not one for for Systems Manager Session Manager
 //
 // For information about how to troubleshoot the issues, see Troubleshooting
 // issues with ECS Exec (https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html)
@@ -20940,11 +20951,17 @@ type Task struct {
 	//    * 1024 (1 vCPU) - Available memory values: 2048 (2 GB), 3072 (3 GB), 4096
 	//    (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)
 	//
-	//    * 2048 (2 vCPU) - Available memory values: Between 4096 (4 GB) and 16384
-	//    (16 GB) in increments of 1024 (1 GB)
+	//    * 2048 (2 vCPU) - Available memory values: 4096 (4 GB) and 16384 (16 GB)
+	//    in increments of 1024 (1 GB)
 	//
-	//    * 4096 (4 vCPU) - Available memory values: Between 8192 (8 GB) and 30720
-	//    (30 GB) in increments of 1024 (1 GB)
+	//    * 4096 (4 vCPU) - Available memory values: 8192 (8 GB) and 30720 (30 GB)
+	//    in increments of 1024 (1 GB)
+	//
+	//    * 8192 (8 vCPU) - Available memory values: 16 GB and 60 GB in 4 GB increments
+	//    This option requires Linux platform 1.4.0 or later.
+	//
+	//    * 16384 (16vCPU) - Available memory values: 32GB and 120 GB in 8 GB increments
+	//    This option requires Linux platform 1.4.0 or later.
 	Cpu *string `locationName:"cpu" type:"string"`
 
 	// The Unix timestamp for the time when the task was created. More specifically,
@@ -21020,6 +21037,12 @@ type Task struct {
 	//
 	//    * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
 	//    Available cpu values: 4096 (4 vCPU)
+	//
+	//    * Between 16 GB and 60 GB in 4 GB increments - Available cpu values: 8192
+	//    (8 vCPU) This option requires Linux platform 1.4.0 or later.
+	//
+	//    * Between 32GB and 120 GB in 8 GB increments - Available cpu values: 16384
+	//    (16 vCPU) This option requires Linux platform 1.4.0 or later.
 	Memory *string `locationName:"memory" type:"string"`
 
 	// One or more container overrides.
@@ -21398,11 +21421,17 @@ type TaskDefinition struct {
 	//    * 1024 (1 vCPU) - Available memory values: 2048 (2 GB), 3072 (3 GB), 4096
 	//    (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)
 	//
-	//    * 2048 (2 vCPU) - Available memory values: Between 4096 (4 GB) and 16384
-	//    (16 GB) in increments of 1024 (1 GB)
+	//    * 2048 (2 vCPU) - Available memory values: 4096 (4 GB) and 16384 (16 GB)
+	//    in increments of 1024 (1 GB)
 	//
-	//    * 4096 (4 vCPU) - Available memory values: Between 8192 (8 GB) and 30720
-	//    (30 GB) in increments of 1024 (1 GB)
+	//    * 4096 (4 vCPU) - Available memory values: 8192 (8 GB) and 30720 (30 GB)
+	//    in increments of 1024 (1 GB)
+	//
+	//    * 8192 (8 vCPU) - Available memory values: 16 GB and 60 GB in 4 GB increments
+	//    This option requires Linux platform 1.4.0 or later.
+	//
+	//    * 16384 (16vCPU) - Available memory values: 32GB and 120 GB in 8 GB increments
+	//    This option requires Linux platform 1.4.0 or later.
 	Cpu *string `locationName:"cpu" type:"string"`
 
 	// The Unix timestamp for the time when the task definition was deregistered.
@@ -21488,6 +21517,12 @@ type TaskDefinition struct {
 	//
 	//    * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) -
 	//    Available cpu values: 4096 (4 vCPU)
+	//
+	//    * Between 16 GB and 60 GB in 4 GB increments - Available cpu values: 8192
+	//    (8 vCPU) This option requires Linux platform 1.4.0 or later.
+	//
+	//    * Between 32GB and 120 GB in 8 GB increments - Available cpu values: 16384
+	//    (16 vCPU) This option requires Linux platform 1.4.0 or later.
 	Memory *string `locationName:"memory" type:"string"`
 
 	// The Docker networking mode to use for the containers in the task. The valid
