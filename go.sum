@@ -2,8 +2,8 @@ github.com/aaronland/go-aws-session v0.1.0 h1:1dj3oQhw8Jtecz8jeT5AAzTul0KbLZ8Yhm
 github.com/aaronland/go-aws-session v0.1.0/go.mod h1:M5imkutLPvwnI1Bb38minI3TCy1eSvwP6odMtCmBzqk=
 github.com/aaronland/go-string v1.0.0 h1:fPHmC1i9JhGzgi4qdCSXKc4xTCaLLe0uvlJMu9dHhco=
 github.com/aaronland/go-string v1.0.0/go.mod h1:URh3Au/fNbM0++WjBseurE3QTp875wiJ9ImrecD+7tI=
-github.com/aws/aws-sdk-go v1.44.164 h1:qDj0RutF2Ut0HZYyUJxFdReLxpYrjupsu2JmDIgCvX8=
-github.com/aws/aws-sdk-go v1.44.164/go.mod h1:aVsgQcEevwlmQ7qHE9I3h+dtQgpqhFB+i8Phjh7fkwI=
+github.com/aws/aws-sdk-go v1.44.198 h1:kgnvxQv4/kP5M0nbxBx0Ac0so9ndr9f8Ti0g+NmPQF8=
+github.com/aws/aws-sdk-go v1.44.198/go.mod h1:aVsgQcEevwlmQ7qHE9I3h+dtQgpqhFB+i8Phjh7fkwI=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=
