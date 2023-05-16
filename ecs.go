@@ -1,13 +1,14 @@
 package ecs
 
 import (
-	"errors"
+	"context"
+	"fmt"
+	"log"
+	"time"
+
 	"github.com/aaronland/go-aws-session"
 	"github.com/aws/aws-sdk-go/aws"
-	aws_session "github.com/aws/aws-sdk-go/aws/session"
-	aws_cloudwatchlogs "github.com/aws/aws-sdk-go/service/cloudwatchlogs"
 	aws_ecs "github.com/aws/aws-sdk-go/service/ecs"
-	_ "log"
 )
 
 type TaskResponse struct {
@@ -26,36 +27,26 @@ type TaskOptions struct {
 	SecurityGroups  []string
 }
 
-type MonitorTaskResultSet map[string]*MonitorTaskResult
-
-type MonitorTaskResult struct {
-	ARN    string
-	Errors []error
-	Logs   []*aws_cloudwatchlogs.OutputLogEvent
+type WaitTasksOptions struct {
+	Cluster  string
+	TaskArns []string
+	Timeout  time.Duration
+	Interval time.Duration
+	Logger   *log.Logger
 }
 
-type MonitorTaskOptions struct {
-	DSN       string
-	Container string
-	Cluster   string
-	WithLogs  bool
-	LogsDSN   string
-}
+func NewService(session_uri string) (*aws_ecs.ECS, error) {
 
-func LaunchTaskWithDSN(dsn string, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
-
-	sess, err := session.NewSessionWithDSN(dsn)
+	sess, err := session.NewSession(session_uri)
 
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("Failed to create session, %v", err)
 	}
 
-	return LaunchTaskWithSession(sess, task_opts, cmd...)
+	return aws_ecs.New(sess), nil
 }
 
-func LaunchTaskWithSession(sess *aws_session.Session, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
-
-	ecs_svc := aws_ecs.New(sess)
+func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.ECS, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
 
 	cluster := aws.String(task_opts.Cluster)
 	task := aws.String(task_opts.Task)
@@ -116,7 +107,7 @@ func LaunchTaskWithSession(sess *aws_session.Session, task_opts *TaskOptions, cm
 	}
 
 	if len(task_output.Tasks) == 0 {
-		return nil, errors.New("run task returned no errors... but no tasks")
+		return nil, fmt.Errorf("run task returned no errors... but no tasks")
 	}
 
 	task_arns := make([]string, len(task_output.Tasks))
@@ -131,4 +122,51 @@ func LaunchTaskWithSession(sess *aws_session.Session, task_opts *TaskOptions, cm
 	}
 
 	return task_rsp, nil
+}
+
+func WaitForTasksToComplete(ctx context.Context, ecs_svc *aws_ecs.ECS, opts *WaitTasksOptions) error {
+
+	ctx, cancel := context.WithTimeout(ctx, opts.Timeout)
+	defer cancel()
+
+	ticker := time.NewTicker(opts.Interval)
+	defer ticker.Stop()
+
+	remaining := len(opts.TaskArns)
+
+	for remaining > 0 {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case now := <-ticker.C:
+
+			list_input := &aws_ecs.ListTasksInput{
+				Cluster:       aws.String(opts.Cluster),
+				DesiredStatus: aws.String("STOPPED"),
+			}
+
+			list_rsp, err := ecs_svc.ListTasks(list_input)
+
+			if err != nil {
+				return fmt.Errorf("Failed to list tasks, %w", err)
+			}
+
+			for _, stopped_t := range list_rsp.TaskArns {
+
+				for _, t := range opts.TaskArns {
+
+					if *stopped_t == t {
+						remaining -= 1
+						break
+					}
+				}
+			}
+
+			if opts.Logger != nil {
+				opts.Logger.Printf("%v %d tasks remaining", now, remaining)
+			}
+		}
+	}
+
+	return nil
 }
