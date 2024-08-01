@@ -30,7 +30,7 @@ func main() {
 	flag.Var(&subnets, "subnet", "One or more subnets to run your ECS task in.")
 	flag.Var(&security_groups, "security-group", "A valid AWS security group to run your task under.")
 
-	session_uri := flag.String("session-uri", "", "A valid aaronland/go-aws-session URI.")
+	session_uri := flag.String("session-uri", "", "A valid aaronland/go-aws-auth URI.")
 
 	flag.Parse()
 
