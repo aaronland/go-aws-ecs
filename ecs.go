@@ -57,7 +57,6 @@ func LaunchTask(ctx context.Context, ecs_client *aws_ecs.Client, task_opts *Task
 	cluster := aws.String(task_opts.Cluster)
 	task := aws.String(task_opts.Task)
 
-	launch_type := aws.String(task_opts.LaunchType)
 	platform_version := aws.String(task_opts.PlatformVersion)
 
 	var public_ip types.AssignPublicIp
@@ -69,24 +68,18 @@ func LaunchTask(ctx context.Context, ecs_client *aws_ecs.Client, task_opts *Task
 		public_ip = types.AssignPublicIpDisabled
 	}
 
-	/*
-		subnets := make([]*string, len(task_opts.Subnets))
+	var launch_type types.LaunchType
 
-		for i, sn := range task_opts.Subnets {
-			subnets[i] = aws.String(sn)
-		}
-
-		security_groups := make([]*string, len(task_opts.SecurityGroups))
-		for i, sg := range task_opts.SecurityGroups {
-			security_groups[i] = aws.String(sg)
-		}
-
-		aws_cmd := make([]*string, len(cmd))
-
-		for i, str := range cmd {
-			aws_cmd[i] = aws.String(str)
-		}
-	*/
+	switch task_opts.LaunchType {
+	case "EC2":
+		launch_type = types.LaunchTypeEc2
+	case "FARGATE":
+		launch_type = types.LaunchTypeFargate
+	case "EXTERNAL":
+		launch_type = types.LaunchTypeExternal
+	default:
+		return nil, fmt.Errorf("Invalid launch type")
+	}
 
 	network := &types.NetworkConfiguration{
 		AwsvpcConfiguration: &types.AwsVpcConfiguration{
@@ -96,13 +89,13 @@ func LaunchTask(ctx context.Context, ecs_client *aws_ecs.Client, task_opts *Task
 		},
 	}
 
-	process_override := &types.ContainerOverride{
+	process_override := types.ContainerOverride{
 		Name:    aws.String(task_opts.Container),
 		Command: cmd,
 	}
 
 	overrides := &types.TaskOverride{
-		ContainerOverrides: []*types.ContainerOverride{
+		ContainerOverrides: []types.ContainerOverride{
 			process_override,
 		},
 	}
@@ -116,7 +109,7 @@ func LaunchTask(ctx context.Context, ecs_client *aws_ecs.Client, task_opts *Task
 		Overrides:            overrides,
 	}
 
-	task_output, err := ecs_client.RunTask(input)
+	task_output, err := ecs_client.RunTask(ctx, input)
 
 	if err != nil {
 		return nil, err
@@ -158,10 +151,10 @@ func WaitForTasksToComplete(ctx context.Context, ecs_client *aws_ecs.Client, opt
 
 			list_input := &aws_ecs.ListTasksInput{
 				Cluster:       aws.String(opts.Cluster),
-				DesiredStatus: aws.String("STOPPED"),
+				DesiredStatus: types.DesiredStatusStopped,
 			}
 
-			list_rsp, err := ecs_client.ListTasks(list_input)
+			list_rsp, err := ecs_client.ListTasks(ctx, list_input)
 
 			if err != nil {
 				return fmt.Errorf("Failed to list tasks, %w", err)
@@ -171,7 +164,7 @@ func WaitForTasksToComplete(ctx context.Context, ecs_client *aws_ecs.Client, opt
 
 				for _, t := range opts.TaskArns {
 
-					if *stopped_t == t {
+					if stopped_t == t {
 						remaining -= 1
 						break
 					}
