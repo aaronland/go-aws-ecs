@@ -1,5 +1,5 @@
-github.com/aaronland/go-aws-auth v1.6.2 h1:hUKqt1WnFCiAnNVvznF/pfT1JTPTHXInKNbXaPhBlPc=
-github.com/aaronland/go-aws-auth v1.6.2/go.mod h1:+t/vLj8Uq/Sjf13LQOJdgP2GG+/c+dBxQxA7wYad4bQ=
+github.com/aaronland/go-aws-auth v1.6.3 h1:AL5Q3nBRB+zeAz9Br8KRO8Y5wpeb2SaB/169CHlP9v8=
+github.com/aaronland/go-aws-auth v1.6.3/go.mod h1:+t/vLj8Uq/Sjf13LQOJdgP2GG+/c+dBxQxA7wYad4bQ=
 github.com/aws/aws-sdk-go-v2 v1.30.3 h1:jUeBtG0Ih+ZIFH0F4UkmL9w3cSpaMv9tYYDbzILP8dY=
 github.com/aws/aws-sdk-go-v2 v1.30.3/go.mod h1:nIQjQVp5sfpQcTc9mPSr1B0PaWK5ByX9MOoDadSN4lc=
 github.com/aws/aws-sdk-go-v2/config v1.27.27 h1:HdqgGt1OAP0HkEDDShEl0oSYa9ZZBSOmKpdpsDMdO90=

@@ -5,7 +5,7 @@ go 1.22.1
 toolchain go1.22.4
 
 require (
-	github.com/aaronland/go-aws-auth v1.6.2
+	github.com/aaronland/go-aws-auth v1.6.3
 	github.com/aws/aws-sdk-go-v2 v1.30.3
 	github.com/aws/aws-sdk-go-v2/service/ecs v1.44.3
 	github.com/sfomuseum/go-flags v0.10.0
