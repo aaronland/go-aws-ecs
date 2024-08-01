@@ -9,6 +9,7 @@ import (
 	"github.com/aaronland/go-aws-auth"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	aws_ecs "github.com/aws/aws-sdk-go-v2/service/ecs"
+	"github.com/aws/aws-sdk-go-v2/service/ecs/types"
 )
 
 type TaskResponse struct {
@@ -51,47 +52,57 @@ func NewClient(ctx context.Context, uri string) (*aws_ecs.Client, error) {
 	return aws_ecs.NewFromConfig(cfg), nil
 }
 
-func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.Client, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
+func LaunchTask(ctx context.Context, ecs_client *aws_ecs.Client, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
 
 	cluster := aws.String(task_opts.Cluster)
 	task := aws.String(task_opts.Task)
 
 	launch_type := aws.String(task_opts.LaunchType)
 	platform_version := aws.String(task_opts.PlatformVersion)
-	public_ip := aws.String(task_opts.PublicIP)
 
-	subnets := make([]*string, len(task_opts.Subnets))
-	security_groups := make([]*string, len(task_opts.SecurityGroups))
+	var public_ip types.AssignPublicIp
 
-	for i, sn := range task_opts.Subnets {
-		subnets[i] = aws.String(sn)
+	switch task_opts.PublicIP {
+	case "ENABLED":
+		public_ip = types.AssignPublicIpEnabled
+	default:
+		public_ip = types.AssignPublicIpDisabled
 	}
 
-	for i, sg := range task_opts.SecurityGroups {
-		security_groups[i] = aws.String(sg)
-	}
+	/*
+		subnets := make([]*string, len(task_opts.Subnets))
 
-	aws_cmd := make([]*string, len(cmd))
+		for i, sn := range task_opts.Subnets {
+			subnets[i] = aws.String(sn)
+		}
 
-	for i, str := range cmd {
-		aws_cmd[i] = aws.String(str)
-	}
+		security_groups := make([]*string, len(task_opts.SecurityGroups))
+		for i, sg := range task_opts.SecurityGroups {
+			security_groups[i] = aws.String(sg)
+		}
 
-	network := &aws_ecs.NetworkConfiguration{
-		AwsvpcConfiguration: &aws_ecs.AwsVpcConfiguration{
+		aws_cmd := make([]*string, len(cmd))
+
+		for i, str := range cmd {
+			aws_cmd[i] = aws.String(str)
+		}
+	*/
+
+	network := &types.NetworkConfiguration{
+		AwsvpcConfiguration: &types.AwsVpcConfiguration{
 			AssignPublicIp: public_ip,
-			SecurityGroups: security_groups,
-			Subnets:        subnets,
+			SecurityGroups: task_opts.SecurityGroups,
+			Subnets:        task_opts.Subnets,
 		},
 	}
 
-	process_override := &aws_ecs.ContainerOverride{
+	process_override := &types.ContainerOverride{
 		Name:    aws.String(task_opts.Container),
-		Command: aws_cmd,
+		Command: cmd,
 	}
 
-	overrides := &aws_ecs.TaskOverride{
-		ContainerOverrides: []*aws_ecs.ContainerOverride{
+	overrides := &types.TaskOverride{
+		ContainerOverrides: []*types.ContainerOverride{
 			process_override,
 		},
 	}
@@ -105,7 +116,7 @@ func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.Client, task_opts *TaskOpt
 		Overrides:            overrides,
 	}
 
-	task_output, err := ecs_svc.RunTask(input)
+	task_output, err := ecs_client.RunTask(input)
 
 	if err != nil {
 		return nil, err
@@ -129,7 +140,7 @@ func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.Client, task_opts *TaskOpt
 	return task_rsp, nil
 }
 
-func WaitForTasksToComplete(ctx context.Context, ecs_svc *aws_ecs.ECS, opts *WaitTasksOptions) error {
+func WaitForTasksToComplete(ctx context.Context, ecs_client *aws_ecs.Client, opts *WaitTasksOptions) error {
 
 	ctx, cancel := context.WithTimeout(ctx, opts.Timeout)
 	defer cancel()
@@ -150,7 +161,7 @@ func WaitForTasksToComplete(ctx context.Context, ecs_svc *aws_ecs.ECS, opts *Wai
 				DesiredStatus: aws.String("STOPPED"),
 			}
 
-			list_rsp, err := ecs_svc.ListTasks(list_input)
+			list_rsp, err := ecs_client.ListTasks(list_input)
 
 			if err != nil {
 				return fmt.Errorf("Failed to list tasks, %w", err)
