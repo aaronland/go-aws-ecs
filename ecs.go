@@ -6,9 +6,9 @@ import (
 	"log"
 	"time"
 
-	"github.com/aaronland/go-aws-session"
-	"github.com/aws/aws-sdk-go/aws"
-	aws_ecs "github.com/aws/aws-sdk-go/service/ecs"
+	"github.com/aaronland/go-aws-auth"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	aws_ecs "github.com/aws/aws-sdk-go-v2/service/ecs"
 )
 
 type TaskResponse struct {
@@ -35,18 +35,23 @@ type WaitTasksOptions struct {
 	Logger   *log.Logger
 }
 
-func NewService(session_uri string) (*aws_ecs.ECS, error) {
-
-	sess, err := session.NewSession(session_uri)
-
-	if err != nil {
-		return nil, fmt.Errorf("Failed to create session, %v", err)
-	}
-
-	return aws_ecs.New(sess), nil
+func NewService(uri string) (*aws_ecs.Client, error) {
+	ctx := context.Background()
+	return NewClient(ctx, uri)
 }
 
-func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.ECS, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
+func NewClient(ctx context.Context, uri string) (*aws_ecs.Client, error) {
+
+	cfg, err := auth.NewConfig(ctx, uri)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return aws_ecs.NewFromConfig(cfg), nil
+}
+
+func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.Client, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
 
 	cluster := aws.String(task_opts.Cluster)
 	task := aws.String(task_opts.Task)
