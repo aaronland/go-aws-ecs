@@ -27,7 +27,7 @@ Usage of ./bin/ecs-launch-task:
   -container string
     	The name of your ECS container.
   -session-uri string
-    	A valid aaronland/go-aws-session URI.
+    	A valid aaronland/go-aws-auth URI.
   -launch-type string
     	A valid ECS launch type.
   -platform-version string
@@ -64,10 +64,16 @@ Any valid AWS region.
 ##### For example:
 
 ```
+aws://us-east-1?credentials=session
+```
+
+Note: For backwards compatibility the following will also work if no AWS region is specified in the host component of the URI:
+
+```
 aws://?region=us-east-1&credentials=session
 ```
 
 ## See also
 
-* https://github.com/aws/aws-sdk-go
-* https://github.com/aaronland/go-aws-session
+* https://github.com/aws/aws-sdk-go-v2
+* https://github.com/aaronland/go-aws-auth

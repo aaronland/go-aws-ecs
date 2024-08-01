@@ -6,9 +6,10 @@ import (
 	"log"
 	"time"
 
-	"github.com/aaronland/go-aws-session"
-	"github.com/aws/aws-sdk-go/aws"
-	aws_ecs "github.com/aws/aws-sdk-go/service/ecs"
+	"github.com/aaronland/go-aws-auth"
+	"github.com/aws/aws-sdk-go-v2/aws"
+	aws_ecs "github.com/aws/aws-sdk-go-v2/service/ecs"
+	"github.com/aws/aws-sdk-go-v2/service/ecs/types"
 )
 
 type TaskResponse struct {
@@ -35,58 +36,66 @@ type WaitTasksOptions struct {
 	Logger   *log.Logger
 }
 
-func NewService(session_uri string) (*aws_ecs.ECS, error) {
-
-	sess, err := session.NewSession(session_uri)
-
-	if err != nil {
-		return nil, fmt.Errorf("Failed to create session, %v", err)
-	}
-
-	return aws_ecs.New(sess), nil
+func NewService(uri string) (*aws_ecs.Client, error) {
+	ctx := context.Background()
+	return NewClient(ctx, uri)
 }
 
-func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.ECS, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
+func NewClient(ctx context.Context, uri string) (*aws_ecs.Client, error) {
+
+	cfg, err := auth.NewConfig(ctx, uri)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return aws_ecs.NewFromConfig(cfg), nil
+}
+
+func LaunchTask(ctx context.Context, ecs_client *aws_ecs.Client, task_opts *TaskOptions, cmd ...string) (*TaskResponse, error) {
 
 	cluster := aws.String(task_opts.Cluster)
 	task := aws.String(task_opts.Task)
 
-	launch_type := aws.String(task_opts.LaunchType)
 	platform_version := aws.String(task_opts.PlatformVersion)
-	public_ip := aws.String(task_opts.PublicIP)
 
-	subnets := make([]*string, len(task_opts.Subnets))
-	security_groups := make([]*string, len(task_opts.SecurityGroups))
+	var public_ip types.AssignPublicIp
 
-	for i, sn := range task_opts.Subnets {
-		subnets[i] = aws.String(sn)
+	switch task_opts.PublicIP {
+	case "ENABLED":
+		public_ip = types.AssignPublicIpEnabled
+	default:
+		public_ip = types.AssignPublicIpDisabled
 	}
 
-	for i, sg := range task_opts.SecurityGroups {
-		security_groups[i] = aws.String(sg)
+	var launch_type types.LaunchType
+
+	switch task_opts.LaunchType {
+	case "EC2":
+		launch_type = types.LaunchTypeEc2
+	case "FARGATE":
+		launch_type = types.LaunchTypeFargate
+	case "EXTERNAL":
+		launch_type = types.LaunchTypeExternal
+	default:
+		return nil, fmt.Errorf("Invalid launch type")
 	}
 
-	aws_cmd := make([]*string, len(cmd))
-
-	for i, str := range cmd {
-		aws_cmd[i] = aws.String(str)
-	}
-
-	network := &aws_ecs.NetworkConfiguration{
-		AwsvpcConfiguration: &aws_ecs.AwsVpcConfiguration{
+	network := &types.NetworkConfiguration{
+		AwsvpcConfiguration: &types.AwsVpcConfiguration{
 			AssignPublicIp: public_ip,
-			SecurityGroups: security_groups,
-			Subnets:        subnets,
+			SecurityGroups: task_opts.SecurityGroups,
+			Subnets:        task_opts.Subnets,
 		},
 	}
 
-	process_override := &aws_ecs.ContainerOverride{
+	process_override := types.ContainerOverride{
 		Name:    aws.String(task_opts.Container),
-		Command: aws_cmd,
+		Command: cmd,
 	}
 
-	overrides := &aws_ecs.TaskOverride{
-		ContainerOverrides: []*aws_ecs.ContainerOverride{
+	overrides := &types.TaskOverride{
+		ContainerOverrides: []types.ContainerOverride{
 			process_override,
 		},
 	}
@@ -100,7 +109,7 @@ func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.ECS, task_opts *TaskOption
 		Overrides:            overrides,
 	}
 
-	task_output, err := ecs_svc.RunTask(input)
+	task_output, err := ecs_client.RunTask(ctx, input)
 
 	if err != nil {
 		return nil, err
@@ -124,7 +133,7 @@ func LaunchTask(ctx context.Context, ecs_svc *aws_ecs.ECS, task_opts *TaskOption
 	return task_rsp, nil
 }
 
-func WaitForTasksToComplete(ctx context.Context, ecs_svc *aws_ecs.ECS, opts *WaitTasksOptions) error {
+func WaitForTasksToComplete(ctx context.Context, ecs_client *aws_ecs.Client, opts *WaitTasksOptions) error {
 
 	ctx, cancel := context.WithTimeout(ctx, opts.Timeout)
 	defer cancel()
@@ -142,10 +151,10 @@ func WaitForTasksToComplete(ctx context.Context, ecs_svc *aws_ecs.ECS, opts *Wai
 
 			list_input := &aws_ecs.ListTasksInput{
 				Cluster:       aws.String(opts.Cluster),
-				DesiredStatus: aws.String("STOPPED"),
+				DesiredStatus: types.DesiredStatusStopped,
 			}
 
-			list_rsp, err := ecs_svc.ListTasks(list_input)
+			list_rsp, err := ecs_client.ListTasks(ctx, list_input)
 
 			if err != nil {
 				return fmt.Errorf("Failed to list tasks, %w", err)
@@ -155,7 +164,7 @@ func WaitForTasksToComplete(ctx context.Context, ecs_svc *aws_ecs.ECS, opts *Wai
 
 				for _, t := range opts.TaskArns {
 
-					if *stopped_t == t {
+					if stopped_t == t {
 						remaining -= 1
 						break
 					}
