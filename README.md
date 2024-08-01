@@ -69,5 +69,5 @@ aws://?region=us-east-1&credentials=session
 
 ## See also
 
-* https://github.com/aws/aws-sdk-go
-* https://github.com/aaronland/go-aws-session
+* https://github.com/aws/aws-sdk-go-v2
+* https://github.com/aaronland/go-aws-auth
