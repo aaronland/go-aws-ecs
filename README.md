@@ -2,6 +2,10 @@
 
 Go package for basic AWS ECS related operations.
 
+## Deprecation notice
+
+This package has been deprecated and will no longer be updated. It has been replaced by the [aaronland/go-aws](https://github.com/aaronland/go-aws) package.
+
 ## Documentation
 
 Documentation is incomplete.
